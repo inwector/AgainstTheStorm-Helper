@@ -1,0 +1,188 @@
+{
+  "wood": {
+    "value": "0.06"
+  },
+  "herbs": {
+    "value": "0.18"
+  },
+  "insects": {
+    "value": "0.18"
+  },
+  "resin": {
+    "value": "0.14"
+  },
+  "vegetables": {
+    "value": "0.18"
+  },
+  "algae": {
+    "value": "0.14"
+  },
+  "stone": {
+    "value": "0.14"
+  },
+  "clay": {
+    "value": "0.14"
+  },
+  "salt": {
+    "value": "0.18"
+  },
+  "storm_water": {
+    "value": "0.06"
+  },
+  "clearance_water": {
+    "value": "0.06"
+  },
+  "drizzle_water": {
+    "value": "0.06"
+  },
+  "crystalized_dew": {
+    "value": "0.59"
+  },
+  "dye": {
+    "value": "0.09"
+  },
+  "mushrooms": {
+    "value": "0.18"
+  },
+  "roots": {
+    "value": "0.18"
+  },
+  "pottery": {
+    "value": "0.17"
+  },
+  "barrels": {
+    "value": "0.20"
+  },
+  "waterskins": {
+    "value": "0.18"
+  },
+  "tea": {
+    "value": "0.14"
+  },
+  "berries": {
+    "value": "0.18"
+  },
+  "reed": {
+    "value": "0.14"
+  },
+  "wine": {
+    "value": "0.12"
+  },
+  "pipes": {
+    "value": "0.58"
+  },
+  "parts": {
+    "value": "2.39"
+  },
+  "planks": {
+    "value": "0.17"
+  },
+  "bricks": {
+    "value": "0.27"
+  },
+  "fabric": {
+    "value": "0.27"
+  },
+  "copper_ore": {
+    "value": "0.14"
+  },
+  "scales": {
+    "value": "0.14"
+  },
+  "coal": {
+    "value": "0.29"
+  },
+  "meat": {
+    "value": "0.18"
+  },
+  "oil": {
+    "value": "0.14"
+  },
+  "sea_marrow": {
+    "value": "0.31"
+  },
+  "jerky": {
+    "value": "0.14"
+  },
+  "copper_bars": {
+    "value": "0.59"
+  },
+  "leather": {
+    "value": "0.14"
+  },
+  "coats": {
+    "value": "0.17"
+  },
+  "plant_fiber": {
+    "value": "0.14"
+  },
+  "scrolls": {
+    "value": "0.12"
+  },
+  "flour": {
+    "value": "0.14"
+  },
+  "biscuits": {
+    "value": "0.19"
+  },
+  "fish": {
+    "value": "0.18"
+  },
+  "pie": {
+    "value": "0.17"
+  },
+  "grain": {
+    "value": "0.18"
+  },
+  "porridge": {
+    "value": "0.15"
+  },
+  "pickled_goods": {
+    "value": "0.16"
+  },
+  "purging_fire": {
+    "value": "0.31"
+  },
+  "ale": {
+    "value": "0.16"
+  },
+  "pack_of_crops": {
+    "value": "1"
+  },
+  "incense": {
+    "value": "0.17"
+  },
+  "skewers": {
+    "value": "0.16"
+  },
+  "paste": {
+    "value": "0.14"
+  },
+  "tools": {
+    "value": "1.38"
+  },
+  "training_gear": {
+    "value": "0.21"
+  },
+  "pack_of_luxury_goods": {
+    "value": "1.50"
+  },
+  "pack_of_provisions": {
+    "value": "0.50"
+  },
+  "pack_of_building_materials": {
+    "value": "1"
+  },
+  "boots": {
+    "value": "0.07"
+  },
+  "amber": {
+    "value": "1"
+  },
+  "wildfire_essence": {
+    "value": "2.50"
+  },
+  "pack_of_trade_goods": {
+    "value": "1.50"
+  }
+}

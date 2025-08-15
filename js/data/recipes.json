@@ -1,0 +1,3000 @@
+﻿{
+  "ale_1star": {
+    "ingredients": [
+      {
+        "options": [ "grain", "roots" ],
+        "amount": 6
+      },
+      {
+        "options": [ "pottery", "barrels", "waterskins" ],
+        "amount": [ 3, 2, 3 ]
+      }
+    ],
+    "output": {
+      "item": "ale",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [ "scribe" ]
+  },
+  "ale_2star": {
+    "ingredients": [
+      {
+        "options": [ "grain", "roots" ],
+        "amount": 5
+      },
+      {
+        "options": [ "pottery", "barrels", "waterskins" ],
+        "amount": [ 3, 2, 3 ]
+      }
+    ],
+    "output": {
+      "item": "ale",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [ "distillery", "tinctury" ]
+  },
+  "ale_3star": {
+    "ingredients": [
+      {
+        "options": [ "grain", "roots" ],
+        "amount": 4
+      },
+      {
+        "options": [ "pottery", "barrels", "waterskins" ],
+        "amount": [ 2, 1, 2 ]
+      }
+    ],
+    "output": {
+      "item": "ale",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [ "brewery", "flawless_brewery" ]
+  },
+  "amber_3star": {
+    "ingredients": [
+      {
+        "options": [ "resin" ],
+        "amount": 3
+      },
+      {
+        "options": [ "clearance_water", "oil" ],
+        "amount": [ 10, 1 ]
+      }
+    ],
+    "output": {
+      "item": "amber",
+      "amount": 1
+    },
+    "production_time": 42,
+    "buildings": [ "finesmith" ]
+  },
+  "barrels_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": 2
+      },
+      {
+        "options": [
+          "planks"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "barrels",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "artisan",
+      "provisioner",
+      "manufactory"
+    ]
+  },
+  "barrels_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": 1
+      },
+      {
+        "options": [
+          "planks"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "barrels",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "cooperage"
+    ]
+  },
+  "biscuits_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "flour"
+        ],
+        "amount": 8
+      },
+      {
+        "options": [
+          "herbs",
+          "berries",
+          "roots",
+          "eggs",
+          "salt"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "biscuits",
+      "amount": 10
+    },
+    "production_time": 110,
+    "buildings": [
+      "field_kitchen"
+    ]
+  },
+  "biscuits_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "flour"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "herbs",
+          "berries",
+          "roots",
+          "eggs",
+          "salt"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "biscuits",
+      "amount": 10
+    },
+    "production_time": 110,
+    "buildings": [
+      "cannery"
+    ]
+  },
+  "biscuits_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "flour"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "herbs",
+          "berries",
+          "roots",
+          "eggs",
+          "salt"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "biscuits",
+      "amount": 10
+    },
+    "production_time": 110,
+    "buildings": [
+      "bakery",
+      "cookhouse"
+    ]
+  },
+  "biscuits_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "flour"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "herbs",
+          "berries",
+          "roots",
+          "eggs",
+          "salt"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "biscuits",
+      "amount": 10
+    },
+    "production_time": 90,
+    "buildings": [
+      "brick_oven"
+    ]
+  },
+  "boots_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "leather",
+          "scales"
+        ],
+        "amount": 5
+      }
+    ],
+    "output": {
+      "item": "boots",
+      "amount": 10
+    },
+    "production_time": 168,
+    "buildings": [
+      "weaver"
+    ]
+  },
+  "boots_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "leather",
+          "scales"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "boots",
+      "amount": 10
+    },
+    "production_time": 168,
+    "buildings": [
+      "leatherworker",
+      "toolshop"
+    ]
+  },
+  "boots_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "leather",
+          "scales"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "boots",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "cobbler",
+      "flawless_leatherworker"
+    ]
+  },
+  "bricks_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "clay",
+          "stone"
+        ],
+        "amount": 6
+      }
+    ],
+    "output": {
+      "item": "bricks",
+      "amount": 2
+    },
+    "production_time": 56,
+    "buildings": [
+      "crude_workstation"
+    ]
+  },
+  "bricks_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "clay",
+          "stone"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "bricks",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "kiln"
+    ]
+  },
+  "bricks_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "clay",
+          "stone"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "bricks",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "workshop",
+      "stamping_mill"
+    ]
+  },
+  "bricks_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "clay",
+          "stone"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "bricks",
+      "amount": 2
+    },
+    "production_time": 28,
+    "buildings": [
+      "brickyard"
+    ]
+  },
+  "clay_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "clearance_water"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "clay",
+      "amount": 4
+    },
+    "production_time": 60,
+    "buildings": [
+      "clay_pit"
+    ]
+  },
+  "coats_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "fabric",
+          "leather"
+        ],
+        "amount": 3
+      },
+      {
+        "options": [
+          "dye",
+          "resin"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "coats",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "druids_hut"
+    ]
+  },
+  "coats_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "fabric",
+          "leather"
+        ],
+        "amount": 2
+      },
+      {
+        "options": [
+          "dye",
+          "resin"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "coats",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "cooperage",
+      "artisan"
+    ]
+  },
+  "coats_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "fabric",
+          "leather"
+        ],
+        "amount": 1
+      },
+      {
+        "options": [
+          "dye",
+          "resin"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "coats",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "clothier"
+    ]
+  },
+  "coal_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "wood",
+          "algae"
+        ],
+        "amount": [
+          15,
+          8
+        ]
+      }
+    ],
+    "output": {
+      "item": "coal",
+      "amount": 3
+    },
+    "production_time": 126,
+    "buildings": [
+      "brick_oven"
+    ]
+  },
+  "coal_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "wood",
+          "algae"
+        ],
+        "amount": [
+          10,
+          4
+        ]
+      }
+    ],
+    "output": {
+      "item": "coal",
+      "amount": 5
+    },
+    "production_time": 84,
+    "buildings": [
+      "kiln"
+    ]
+  },
+  "copper_bars_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "copper_ore",
+          "scales"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "wood",
+          "oil",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          5,
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "output": {
+      "item": "copper_bars",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "grill"
+    ]
+  },
+  "copper_bars_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "copper_ore",
+          "scales"
+        ],
+        "amount": 5
+      },
+      {
+        "options": [
+          "wood",
+          "oil",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          5,
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "output": {
+      "item": "copper_bars",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "furnace",
+      "stamping_mill"
+    ]
+  },
+  "copper_bars_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "copper_ore",
+          "scales"
+        ],
+        "amount": 4
+      },
+      {
+        "options": [
+          "wood",
+          "oil",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          5,
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "output": {
+      "item": "copper_bars",
+      "amount": 2
+    },
+    "production_time": 28,
+    "buildings": [
+      "smelter",
+      "flawless_smelter"
+    ]
+  },
+  "crystallized_dew_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "insects",
+          "resin",
+          "vegetables",
+          "algae"
+        ],
+        "amount": 3
+      },
+      {
+        "options": [
+          "stone",
+          "clay",
+          "salt"
+        ],
+        "amount": [
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "options": [
+          "storm_water",
+          "clearance_water",
+          "drizzle_water"
+        ],
+        "amount": [
+          10,
+          14,
+          18
+        ]
+      }
+    ],
+    "output": {
+      "item": "crystalized_dew",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "brickyard",
+      "beanery"
+    ]
+  },
+  "crystalized_dew_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "insects",
+          "resin",
+          "vegetables",
+          "algae"
+        ],
+        "amount": 3
+      },
+      {
+        "options": [
+          "stone",
+          "clay",
+          "salt"
+        ],
+        "amount": [
+          4,
+          4,
+          3
+        ]
+      },
+      {
+        "options": [
+          "storm_water",
+          "clearance_water",
+          "drizzle_water"
+        ],
+        "amount": [
+          10,
+          14,
+          18
+        ]
+      }
+    ],
+    "output": {
+      "item": "crystalized_dew",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "brickyard", "beanery"
+    ]
+  },
+  "crystalized_dew_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "insects",
+          "resin",
+          "vegetables",
+          "algae"
+        ],
+        "amount": 2
+      },
+      {
+        "options": [
+          "stone",
+          "clay",
+          "salt"
+        ],
+        "amount": [
+          3,
+          3,
+          2
+        ]
+      },
+      {
+        "options": [
+          "storm_water",
+          "clearance_water",
+          "drizzle_water"
+        ],
+        "amount": [
+          8,
+          12,
+          16
+        ]
+      }
+    ],
+    "output": {
+      "item": "crystalized_dew",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "alchemists_hut"
+    ]
+  },
+  "dye_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "insects",
+          "berries",
+          "copper_ore",
+          "scales",
+          "coal"
+        ],
+        "amount": [
+          5,
+          5,
+          5,
+          5,
+          4
+        ]
+      }
+    ],
+    "output": {
+      "item": "dye",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "cobbler"
+    ]
+  },
+  "dye_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "insects",
+          "berries",
+          "copper_ore",
+          "scales",
+          "coal"
+        ],
+        "amount": [
+          4,
+          4,
+          4,
+          4,
+          3
+        ]
+      }
+    ],
+    "output": {
+      "item": "dye",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "apothecary",
+      "manufactory"
+    ]
+  },
+  "dye_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "insects",
+          "berries",
+          "copper_ore",
+          "scales",
+          "coal"
+        ],
+        "amount": [
+          3,
+          3,
+          3,
+          3,
+          2
+        ]
+      }
+    ],
+    "output": {
+      "item": "dye",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "tinctury"
+    ]
+  },
+  "eggs_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "grain",
+          "insects",
+          "reed",
+          "berries"
+        ],
+        "amount": [
+          3,
+          2,
+          2,
+          2
+        ]
+      }
+    ],
+    "output": {
+      "item": "eggs",
+      "amount": 5
+    },
+    "production_time": 84,
+    "buildings": [
+      "ranch"
+    ]
+  },
+  "fabric_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "plant_fiber",
+          "reed",
+          "algae"
+        ],
+        "amount": 6
+      }
+    ],
+    "output": {
+      "item": "fabric",
+      "amount": 2
+    },
+    "production_time": 56,
+    "buildings": [
+      "crude_workstation"
+    ]
+  },
+  "fabric_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "plant_fiber",
+          "reed",
+          "algae"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "fabric",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "manufactory",
+      "granary",
+      "workshop"
+    ]
+  },
+  "fabric_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "plant_fiber",
+          "reed",
+          "algae"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "fabric",
+      "amount": 2
+    },
+    "production_time": 28,
+    "buildings": [
+      "weaver"
+    ]
+  },
+  "flour_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "grain",
+          "mushrooms",
+          "roots",
+          "algae"
+        ],
+        "amount": 8
+      }
+    ],
+    "output": {
+      "item": "flour",
+      "amount": 10
+    },
+    "production_time": 84,
+    "buildings": [
+      "press"
+    ]
+  },
+  "flour_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "grain",
+          "mushrooms",
+          "roots",
+          "algae"
+        ],
+        "amount": 7
+      }
+    ],
+    "output": {
+      "item": "flour",
+      "amount": 10
+    },
+    "production_time": 63,
+    "buildings": [
+      "supplier",
+      "stamping_mill",
+      "provisioner"
+    ]
+  },
+  "flour_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "grain",
+          "mushrooms",
+          "roots",
+          "algae"
+        ],
+        "amount": 5
+      }
+    ],
+    "output": {
+      "item": "flour",
+      "amount": 10
+    },
+    "production_time": 63,
+    "buildings": [
+      "rain_mill",
+      "flawless_rain_mill"
+    ]
+  },
+  "herbs_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "drizzle_water"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "herbs",
+      "amount": 4
+    },
+    "production_time": 84,
+    "buildings": [
+      "greenhouse"
+    ]
+  },
+  "incense_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "roots",
+          "insects",
+          "scales",
+          "salt",
+          "resin"
+        ],
+        "amount": [
+          6,
+          6,
+          6,
+          6,
+          6,
+          8
+        ]
+      },
+      {
+        "options": [
+          "woods",
+          "oil",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          6,
+          3,
+          2,
+          2
+        ]
+      }
+    ],
+    "output": {
+      "item": "incense",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "smokehouse"
+    ]
+  },
+  "incense_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "roots",
+          "insects",
+          "scales",
+          "salt",
+          "resin"
+        ],
+        "amount": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          7
+        ]
+      },
+      {
+        "options": [
+          "woods",
+          "oil",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          6,
+          3,
+          2,
+          2
+        ]
+      }
+    ],
+    "output": {
+      "item": "incense",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "distillery",
+      "brick_oven",
+      "teahouse"
+    ]
+  },
+  "jerky_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "insects",
+          "meat"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "wood",
+          "oil",
+          "salt",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          5,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "output": {
+      "item": "jerky",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "kiln"
+    ]
+  },
+  "jerky_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "insects",
+          "meat"
+        ],
+        "amount": 5
+      },
+      {
+        "options": [
+          "wood",
+          "oil",
+          "salt",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          5,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "output": {
+      "item": "jerky",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "apothecary",
+      "butcher"
+    ]
+  },
+  "jerky_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "insects",
+          "meat"
+        ],
+        "amount": 4
+      },
+      {
+        "options": [
+          "wood",
+          "oil",
+          "salt",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          5,
+          2,
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "output": {
+      "item": "jerky",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "smokehouse"
+    ]
+  },
+  "leather_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "algae",
+          "reed",
+          "grain",
+          "vegetables"
+        ],
+        "amount": [
+          2,
+          2,
+          2,
+          1
+        ]
+      }
+    ],
+    "output": {
+      "item": "leather",
+      "amount": 4
+    },
+    "production_time": 42,
+    "buildings": [
+      "ranch"
+    ]
+  },
+  "meat_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "plant_fiber",
+          "reed",
+          "algae",
+          "grain",
+          "vegetables"
+        ],
+        "amount": [
+          8,
+          8,
+          8,
+          8,
+          5
+        ]
+      }
+    ],
+    "output": {
+      "item": "meat",
+      "amount": 10
+    },
+    "production_time": 84,
+    "buildings": [
+      "ranch"
+    ]
+  },
+  "mushrooms_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "drizzle_water"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "mushrooms",
+      "amount": 4
+    },
+    "production_time": 84,
+    "buildings": [
+      "greenhouse"
+    ]
+  },
+  "oil_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "grain",
+          "meat",
+          "vegetables",
+          "plant_fiber",
+          "fish"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "oil",
+      "amount": 5
+    },
+    "production_time": 84,
+    "buildings": [
+      "butcher"
+    ]
+  },
+  "oil_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "grain",
+          "meat",
+          "vegetables",
+          "plant_fiber",
+          "fish"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "oil",
+      "amount": 5
+    },
+    "production_time": 63,
+    "buildings": [
+      "druids_hut",
+      "flawless_druids_hut",
+      "press"
+    ]
+  },
+  "pack_of_building_materials_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "planks",
+          "fabric",
+          "bricks",
+          "copper_ore"
+        ],
+        "amount": [
+          10,
+          6,
+          6,
+          14
+        ]
+      }
+    ],
+    "output": {
+      "item": "pack_of_building_materials",
+      "amount": 2
+    },
+    "production_time": 56,
+    "buildings": [
+      "makeshift_post"
+    ]
+  },
+  "pack_of_building_materials_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "planks",
+          "fabric",
+          "bricks",
+          "copper_ore"
+        ],
+        "amount": [
+          7,
+          4,
+          4,
+          10
+        ]
+      }
+    ],
+    "output": {
+      "item": "pack_of_building_materials",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "clothier",
+      "cobbler"
+    ]
+  },
+  "pack_of_crops_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "roots",
+          "grain",
+          "vegetables",
+          "mushrooms"
+        ],
+        "amount": 6
+      }
+    ],
+    "output": {
+      "item": "pack_of_crops",
+      "amount": 2
+    },
+    "production_time": 56,
+    "buildings": [
+      "makeshift_post"
+    ]
+  },
+  "pack_of_crops_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "roots",
+          "grain",
+          "vegetables",
+          "mushrooms"
+        ],
+        "amount": 5
+      }
+    ],
+    "output": {
+      "item": "pack_of_crops",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "brewery"
+    ]
+  },
+  "pack_of_crops_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "roots",
+          "grain",
+          "vegetables",
+          "mushrooms"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "pack_of_crops",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "granary"
+    ]
+  },
+  "pack_of_crops_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "roots",
+          "grain",
+          "vegetables",
+          "mushrooms"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "pack_of_crops",
+      "amount": 2
+    },
+    "production_time": 28,
+    "buildings": [
+      "flawless_brewery"
+    ]
+  },
+  "pack_of_luxury_goods_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "wine",
+          "training_gear",
+          "incense",
+          "scrolls",
+          "ale",
+          "tea"
+        ],
+        "amount": 5
+      }
+    ],
+    "output": {
+      "item": "pack_of_luxury_goods",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "cooperage"
+    ]
+  },
+  "pack_of_luxury_goods_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "wine",
+          "training_gear",
+          "incense",
+          "scrolls",
+          "ale",
+          "tea"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "pack_of_luxury_goods",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "pantry",
+      "carpenter"
+    ]
+  },
+  "pack_of_luxury_goods_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "wine",
+          "training_gear",
+          "incense",
+          "scrolls",
+          "ale",
+          "tea"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "pack_of_luxury_goods",
+      "amount": 2
+    },
+    "production_time": 28,
+    "buildings": [
+      "flawless_cooperage"
+    ]
+  },
+  "pack_of_provisions_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "berries",
+          "insects",
+          "meat",
+          "eggs",
+          "fish"
+        ],
+        "amount": 6
+      }
+    ],
+    "output": {
+      "item": "pack_of_provisions",
+      "amount": 3
+    },
+    "production_time": 56,
+    "buildings": [
+      "makeshift_post"
+    ]
+  },
+  "pack_of_provisions_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "berries",
+          "insects",
+          "meat",
+          "eggs",
+          "fish"
+        ],
+        "amount": 5
+      }
+    ],
+    "output": {
+      "item": "pack_of_provisions",
+      "amount": 3
+    },
+    "production_time": 42,
+    "buildings": [
+      "cellar"
+    ]
+  },
+  "pack_of_provisions_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "berries",
+          "insects",
+          "meat",
+          "eggs",
+          "fish"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "pack_of_provisions",
+      "amount": 3
+    },
+    "production_time": 42,
+    "buildings": [
+      "provisioner"
+    ]
+  },
+  "pack_of_provisions_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "berries",
+          "insects",
+          "meat",
+          "eggs",
+          "fish"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "pack_of_provisions",
+      "amount": 3
+    },
+    "production_time": 28,
+    "buildings": [
+      "flawless_cellar"
+    ]
+  },
+  "pack_of_trade_goods_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "dye",
+          "oil",
+          "flour",
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": [
+          8,
+          8,
+          6,
+          6,
+          6,
+          6
+        ]
+      }
+    ],
+    "output": {
+      "item": "pack_of_trade_goods",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "lumber_mill"
+    ]
+  },
+  "pack_of_trade_goods_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "dye",
+          "oil",
+          "flour",
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": [
+          6,
+          6,
+          4,
+          4,
+          4,
+          4
+        ]
+      }
+    ],
+    "output": {
+      "item": "pack_of_trade_goods",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "smithy",
+      "scribe"
+    ]
+  },
+  "parts_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": 3
+      },
+      {
+        "options": [
+          "coal",
+          "sea_marrow",
+          "oil",
+          "wood"
+        ],
+        "amount": [
+          1,
+          1,
+          1,
+          5
+        ]
+      }
+    ],
+    "output": {
+      "item": "parts",
+      "amount": 1
+    },
+    "production_time": 90,
+    "buildings": [
+      "rainpunk_foundry"
+    ]
+  },
+  "paste_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "dye",
+          "salt"
+        ],
+        "amount": [
+          2,
+          3
+        ]
+      },
+      {
+        "options": [
+          "eggs",
+          "fish",
+          "meat"
+        ],
+        "amount": 8
+      }
+    ],
+    "output": {
+      "item": "paste",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "field_kitchen"
+    ]
+  },
+  "paste_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "dye",
+          "salt"
+        ],
+        "amount": [
+          2,
+          3
+        ]
+      },
+      {
+        "options": [
+          "eggs",
+          "fish",
+          "meat"
+        ],
+        "amount": 6
+      }
+    ],
+    "output": {
+      "item": "paste",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "rain_mill",
+      "press"
+    ]
+  },
+  "paste_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "dye",
+          "salt"
+        ],
+        "amount": [
+          2,
+          3
+        ]
+      },
+      {
+        "options": [
+          "eggs",
+          "fish",
+          "meat"
+        ],
+        "amount": 5
+      }
+    ],
+    "output": {
+      "item": "paste",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "grill"
+    ]
+  },
+  "paste_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "dye",
+          "salt"
+        ],
+        "amount": [
+          2,
+          3
+        ]
+      },
+      {
+        "options": [
+          "eggs",
+          "fish",
+          "meat"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "paste",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "cannery",
+      "flawless_rain_mill"
+    ]
+  },
+  "pickled_goods_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "vegetables",
+          "mushrooms",
+          "roots",
+          "berries",
+          "eggs"
+        ],
+        "amount": 7
+      },
+      {
+        "options": [
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "pickled_goods",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "field_kitchen"
+    ]
+  },
+  "pickled_goods_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "vegetables",
+          "mushrooms",
+          "roots",
+          "berries",
+          "eggs"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "pickled_goods",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "beanery"
+    ]
+  },
+  "pickled_goods_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "vegetables",
+          "mushrooms",
+          "roots",
+          "berries",
+          "eggs"
+        ],
+        "amount": 5
+      },
+      {
+        "options": [
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": [
+          3,
+          3,
+          2
+        ]
+      }
+    ],
+    "output": {
+      "item": "pickled_goods",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "distillery",
+      "granary",
+      "cellar"
+    ]
+  },
+  "pickled_goods_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "vegetables",
+          "mushrooms",
+          "roots",
+          "berries",
+          "eggs"
+        ],
+        "amount": 4
+      },
+      {
+        "options": [
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": [
+          3,
+          3,
+          2
+        ]
+      }
+    ],
+    "output": {
+      "item": "pickled_goods",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "flawless_cellar"
+    ]
+  },
+  "pie_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "flour"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "herbs",
+          "meat",
+          "insects",
+          "berries",
+          "fish"
+        ],
+        "amount": 5
+      }
+    ],
+    "output": {
+      "item": "pie",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "smelter"
+    ]
+  },
+  "pie_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "flour"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "herbs",
+          "meat",
+          "insects",
+          "berries",
+          "fish"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "pie",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "furnace",
+      "pantry",
+      "bakery"
+    ]
+  },
+  "pie_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "flour"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "herbs",
+          "meat",
+          "insects",
+          "berries",
+          "fish"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "pie",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "flawless_smelter"
+    ]
+  },
+  "pipes_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "pipes",
+      "amount": 2
+    },
+    "production_time": 60,
+    "buildings": [
+      "workshop",
+      "crude_workstation"
+    ]
+  },
+  "pipes_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "pipes",
+      "amount": 3
+    },
+    "production_time": 60,
+    "buildings": [
+      "toolship",
+      "smithy"
+    ]
+  },
+  "planks_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "wood"
+        ],
+        "amount": 8
+      }
+    ],
+    "output": {
+      "item": "planks",
+      "amount": 2
+    },
+    "production_time": 56,
+    "buildings": [
+      "crude_workstation"
+    ]
+  },
+  "planks_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "wood"
+        ],
+        "amount": 5
+      }
+    ],
+    "output": {
+      "item": "planks",
+      "amount": 2
+    },
+    "production_time": 42,
+    "buildings": [
+      "supplier",
+      "carpenter",
+      "workshop"
+    ]
+  },
+  "planks_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "wood"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "planks",
+      "amount": 2
+    },
+    "production_time": 28,
+    "buildings": [
+      "lumber_mill"
+    ]
+  },
+  "porridge_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "grain",
+          "vegetables",
+          "mushrooms",
+          "herbs",
+          "fish"
+        ],
+        "amount": 5
+      },
+      {
+        "options": [
+          "drizzle_water",
+          "clearance_water",
+          "storm_water"
+        ],
+        "amount": [
+          7,
+          9,
+          11
+        ]
+      }
+    ],
+    "output": {
+      "item": "porridge",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "brewery",
+      "pantry",
+      "cookhouse"
+    ]
+  },
+  "porridge_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "grain",
+          "vegetables",
+          "mushrooms",
+          "herbs",
+          "fish"
+        ],
+        "amount": 4
+      },
+      {
+        "options": [
+          "drizzle_water",
+          "clearance_water",
+          "storm_water"
+        ],
+        "amount": [
+          6,
+          8,
+          10
+        ]
+      }
+    ],
+    "output": {
+      "item": "porridge",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "beanery",
+      "flawless_brewery"
+    ]
+  },
+  "pottery_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "clay"
+        ],
+        "amount": 4
+      },
+      {
+        "options": [
+          "wood",
+          "oil",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          5,
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "output": {
+      "item": "pottery",
+      "amount": 5
+    },
+    "production_time": 84,
+    "buildings": [
+      "smokehouse"
+    ]
+  },
+  "pottery_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "clay"
+        ],
+        "amount": 3
+      },
+      {
+        "options": [
+          "wood",
+          "oil",
+          "coal",
+          "sea_marrow"
+        ],
+        "amount": [
+          5,
+          2,
+          1,
+          1
+        ]
+      }
+    ],
+    "output": {
+      "item": "pottery",
+      "amount": 5
+    },
+    "production_time": 84,
+    "buildings": [
+      "tinkerer",
+      "brickyard",
+      "bakery"
+    ]
+  },
+  "reed_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "clearance_water"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "reed",
+      "amount": 4
+    },
+    "production_time": 60,
+    "buildings": [
+      "clay_pit"
+    ]
+  },
+  "resin_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "clearance_water"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "resin",
+      "amount": 4
+    },
+    "production_time": 60,
+    "buildings": [
+      "clay_pit"
+    ]
+  },
+  "scrolls_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "leather",
+          "plant_fiber",
+          "wood"
+        ],
+        "amount": [
+          4,
+          4,
+          10
+        ]
+      },
+      {
+        "options": [
+          "dye",
+          "wine"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "scrolls",
+      "amount": 8
+    },
+    "production_time": 84,
+    "buildings": [
+      "rain_mill",
+      "lumber_mill"
+    ]
+  },
+  "scrolls_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "leather",
+          "plant_fiber",
+          "wood"
+        ],
+        "amount": [
+          3,
+          3,
+          8
+        ]
+      },
+      {
+        "options": [
+          "dye",
+          "wine"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "scrolls",
+      "amount": 8
+    },
+    "production_time": 84,
+    "buildings": [
+      "artisan"
+    ]
+  },
+  "scrolls_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "leather",
+          "plant_fiber",
+          "wood"
+        ],
+        "amount": [
+          2,
+          2,
+          6
+        ]
+      },
+      {
+        "options": [
+          "dye",
+          "wine"
+        ],
+        "amount": 1
+      }
+    ],
+    "output": {
+      "item": "scrolls",
+      "amount": 8
+    },
+    "production_time": 63,
+    "buildings": [
+      "scribe"
+    ]
+  },
+  "skewers_0star": {
+    "ingredients": [
+      {
+        "options": [
+          "insects",
+          "meat",
+          "mushrooms",
+          "fish",
+          "jerky"
+        ],
+        "amount": [
+          5,
+          5,
+          5,
+          5,
+          4
+        ]
+      },
+      {
+        "options": [
+          "vegetables",
+          "roots",
+          "berries",
+          "eggs"
+        ],
+        "amount": 5
+      }
+    ],
+    "output": {
+      "item": "skewers",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "field_kitchen"
+    ]
+  },
+  "skewers_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "insects",
+          "meat",
+          "mushrooms",
+          "fish",
+          "jerky"
+        ],
+        "amount": [
+          3,
+          3,
+          3,
+          3,
+          2
+        ]
+      },
+      {
+        "options": [
+          "vegetables",
+          "roots",
+          "berries",
+          "eggs"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "skewers",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "furnace",
+      "butcher",
+      "cookhouse"
+    ]
+  },
+  "skewers_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "insects",
+          "meat",
+          "mushrooms",
+          "fish",
+          "jerky"
+        ],
+        "amount": [
+          2,
+          2,
+          2,
+          2,
+          1
+        ]
+      },
+      {
+        "options": [
+          "vegetables",
+          "roots",
+          "berries",
+          "eggs"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "skewers",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "grill"
+    ]
+  },
+  "tea_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "dye",
+          "resin",
+          "mushrooms",
+          "roots"
+        ],
+        "amount": 3
+      },
+      {
+        "options": [
+          "drizzle_water",
+          "clearance_water",
+          "storm_water"
+        ],
+        "amount": [
+          3,
+          4,
+          5
+        ]
+      },
+      {
+        "options": [
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": [
+          3,
+          2,
+          3
+        ]
+      }
+    ],
+    "output": {
+      "item": "tea",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "apothecary",
+      "alchemists_hut",
+      "druids_hut"
+    ]
+  },
+  "tea_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "herbs",
+          "dye",
+          "resin",
+          "mushrooms",
+          "roots"
+        ],
+        "amount": 2
+      },
+      {
+        "options": [
+          "drizzle_water",
+          "clearance_water",
+          "storm_water"
+        ],
+        "amount": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "options": [
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": [
+          2,
+          1,
+          2
+        ]
+      }
+    ],
+    "output": {
+      "item": "tea",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "teahouse",
+      "flawless_druits_hut"
+    ]
+  },
+  "tools_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "wood",
+          "planks"
+        ],
+        "amount": [
+          8,
+          2
+        ]
+      },
+      {
+        "options": [
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "tools",
+      "amount": 2
+    },
+    "production_time": 75,
+    "buildings": [
+      "carpenter",
+      "smithy",
+      "tinkerer"
+    ]
+  },
+  "tools_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "wood",
+          "planks"
+        ],
+        "amount": [
+          6,
+          1
+        ]
+      },
+      {
+        "options": [
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "tools",
+      "amount": 2
+    },
+    "production_time": 60,
+    "buildings": [
+      "toolshop",
+      "finesmith"
+    ]
+  },
+  "training_gear_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "stone",
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": [
+          8,
+          3,
+          3
+        ]
+      },
+      {
+        "options": [
+          "planks",
+          "reed",
+          "leather"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "training_gear",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "leatherworker",
+      "weaver"
+    ]
+  },
+  "training_gear_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "stone",
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": [
+          5,
+          2,
+          2
+        ]
+      },
+      {
+        "options": [
+          "planks",
+          "reed",
+          "leather"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "training_gear",
+      "amount": 10
+    },
+    "production_time": 126,
+    "buildings": [
+      "tinkerer",
+      "smelter"
+    ]
+  },
+  "training_gear_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "stone",
+          "copper_bars",
+          "crystalized_dew"
+        ],
+        "amount": [
+          3,
+          1,
+          1
+        ]
+      },
+      {
+        "options": [
+          "planks",
+          "reed",
+          "leather"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "training_gear",
+      "amount": 10
+    },
+    "production_time": 105,
+    "buildings": [
+      "flawless_leatherworker",
+      "flawless_smelter"
+    ]
+  },
+  "waterskins_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "leather",
+          "scales"
+        ],
+        "amount": 6
+      },
+      {
+        "options": [
+          "oil",
+          "meat",
+          "salt"
+        ],
+        "amount": 4
+      }
+    ],
+    "output": {
+      "item": "waterskins",
+      "amount": 10
+    },
+    "production_time": 84,
+    "buildings": [
+      "clothier",
+      "teahouse"
+    ]
+  },
+  "waterskins_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "leather",
+          "scales"
+        ],
+        "amount": 5
+      },
+      {
+        "options": [
+          "oil",
+          "meat",
+          "salt"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "waterskins",
+      "amount": 10
+    },
+    "production_time": 84,
+    "buildings": [
+      "supplier"
+    ]
+  },
+  "waterskins_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "leather",
+          "scales"
+        ],
+        "amount": 4
+      },
+      {
+        "options": [
+          "oil",
+          "meat",
+          "salt"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "waterskins",
+      "amount": 10
+    },
+    "production_time": 63,
+    "buildings": [
+      "leatherworker",
+      "flawless_leatherworker"
+    ]
+  },
+  "wildfire_essence_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "coal",
+          "sea_marrow",
+          "oil",
+          "wood"
+        ],
+        "amount": [
+          5,
+          5,
+          5,
+          15
+        ]
+      },
+      {
+        "options": [
+          "pottery",
+          "waterskins",
+          "barrels"
+        ],
+        "amount": 1
+      },
+      {
+        "options": [
+          "drizzle_water",
+          "clearance_water",
+          "storm_water"
+        ],
+        "amount": 10
+      }
+    ],
+    "output": {
+      "item": "wildfire_essence",
+      "amount": 1
+    },
+    "production_time": 90,
+    "buildings": [
+      "rainpunk_foundry"
+    ]
+  },
+  "wine_1star": {
+    "ingredients": [
+      {
+        "options": [
+          "berries",
+          "mushrooms",
+          "reed"
+        ],
+        "amount": 4
+      },
+      {
+        "options": [
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "wine",
+      "amount": 10
+    },
+    "production_time": 84,
+    "buildings": [
+      "tinctury"
+    ]
+  },
+  "wine_2star": {
+    "ingredients": [
+      {
+        "options": [
+          "berries",
+          "mushrooms",
+          "reed"
+        ],
+        "amount": 3
+      },
+      {
+        "options": [
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": 3
+      }
+    ],
+    "output": {
+      "item": "wine",
+      "amount": 10
+    },
+    "production_time": 84,
+    "buildings": [
+      "alchemists_hut",
+      "cannery"
+    ]
+  },
+  "wine_3star": {
+    "ingredients": [
+      {
+        "options": [
+          "berries",
+          "mushrooms",
+          "reed"
+        ],
+        "amount": 2
+      },
+      {
+        "options": [
+          "pottery",
+          "barrels",
+          "waterskins"
+        ],
+        "amount": 2
+      }
+    ],
+    "output": {
+      "item": "wine",
+      "amount": 10
+    },
+    "production_time": 63,
+    "buildings": [
+      "cellar",
+      "flawless_cellar"
+    ]
+  }
+}

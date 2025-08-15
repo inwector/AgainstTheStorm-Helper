@@ -1,0 +1,82 @@
+{
+  "royal_woodlands": {
+    "name": "Royal Woodlands",
+    "abundant_resources": [ "wood" ],
+    "common_resources": [ "wood", "resin", "plant_fiber", "eggs", "berries", "meat", "vegetables", "roots", "mushrooms", "clay", "scales", "leather", "sea_marrow" ],
+    "rare_resources": [ "insects", "herbs", "stone", "copper_ore", "fish" ],
+    "nodes": [ "roots", "vegetables", "plant_fiber", "berries", "mushrooms", "clay", "sea_marrow", "meat", "eggs", "scales" ],
+    "fertile_soil": [ "abundant" ]
+  },
+  "cursed_royal_woodlands": {
+    "name": "Cursed Royal Woodlands",
+    "abundant_resources": [ "clay" ],
+    "common_resources": [ "wood", "insects", "plant fiber", "roots", "grain", "vegetables", "leather", "herbs", "mushrooms", "sea_marrow", "insects", "fish", "copper_ore" ],
+    "rare_resources": [ "roots", "meat", "salt", "berries", "stone", "scales" ],
+    "nodes": [ "grain", "vegetables", "plant_fiber", "leather", "herbs", "mushrooms", "clay", "sea_marrow", "insects", "fish", "copper_ore" ],
+    "fertile_soil": [ "common" ]
+  },
+  "ashen_thicket": {
+    "name": "Ashen Thicket",
+    "abundant_resources": [ "algae" ],
+    "common_resources": [ "wood", "resin", "berries", "sea_marrow", "clay", "eggs", "roots", "vegetables", "mushrooms", "plant_fiber", "leather", "fish", "copper_ore", "coal", "salt" ],
+    "rare_resources": [ "meat", "insects", "herbs", "scales", "stone" ],
+    "nodes": [ "eggs", "roots", "vegetables", "mushrooms", "clay", "plant_fiber", "leather", "fish", "algae", "copper_ore", "coal", "salt" ],
+    "fertile_soil": [ "common" ]
+  },
+  "bamboo_flats": {
+    "name": "Bamboo Flats",
+    "abundant_resources": [ "wood" ],
+    "common_resources": [ "plant_fiber", "oil", "grain", "vegetables", "plant_fiber", "leather", "herbs", "berries", "stone", "meat", "scales", "salt" ],
+    "rare_resources": [ "insects", "clay", "roots", "sea_marrow", "fish", "eggs" ],
+    "nodes": [ "grain", "vegetables", "plant_fiber", "leather", "herbs", "berries", "stone", "meat", "scales", "salt" ],
+    "fertile_soil": [ "abundant" ]
+  },
+  "coastal_grove": {
+    "name": "Coastal Grove",
+    "abundant_resources": [ "algae" ],
+    "common_resources": [ "wood", "vegetables", "salt", "berries", "insects", "roots", "clay", "reed", "fish", "scales", "coal" ],
+    "rare_resources": [ "herbs", "resin", "copper_ore", "sea_marrow", "stone" ],
+    "nodes": [ "berries", "insects", "roots", "clay", "reed", "fish", "scales", "algae", "coal" ],
+    "fertile_soil": [ "common" ]
+  },
+  "coral_forest": {
+    "name": "Coral Forest",
+    "abundant_resources": [],
+    "common_resources": [ "wood", "stone", "incense", "meat", "crystalized_dew", "plant_fiber", "vegetables", "reed", "herbs", "stone", "meat", "insects", "scales", "coal", "salt", "leather" ],
+    "rare_resources": [ "roots", "clay", "berries", "plant_fiber", "copper_ore", "eggs", "sea_marrow", "fish" ],
+    "nodes": ["vegetables", "reed", "herbs", "stone", "meat", "insects", "scales", "coal", "salt"],
+    "fertile_soil": [ "common" ]
+  },
+  "scarlet_orchard": {
+    "name": "Scarlet Orchard",
+    "abundant_resources": [ "wood", "stone", "sea_marrow" ],
+    "common_resources": [ "copper_ore", "dye", "plant_fiber", "grain", "roots", "reed", "leather", "herbs", "berries", "eggs", "fish", "insects" ],
+    "rare_resources": [ "resin", "salt", "meat", "clay", "scales" ],
+    "nodes": ["grain", "roots", "reed", "leather", "herbs", "berries", "sea_marrow", "stone", "eggs", "fish", "copper_ore"],
+    "fertile_soil": [ "common" ]
+  },
+  "marshlands": {
+    "name": "Marshlands",
+    "abundant_resources": [ "grain", "meat", "mushrooms" ],
+    "common_resources": [ "wood", "mushrooms", "leather", "stone", "eggs", "algae", "copper_ore", "coal", "plant_fiber" ],
+    "rare_resources": [ "insects", "salt", "herbs", "fish", "clay" ],
+    "nodes": ["grain", "mushrooms", "stone", "meat", "eggs", "leather", "algae", "copper_ore", "coal"],
+    "fertile_soil": [ "rare" ]
+  },
+  "sealed_forest": {
+    "name": "Sealed Forest",
+    "abundant_resources": [ "clay" ],
+    "common_resources": [ "meat", "sea_marrow", "roots", "reed", "berries", "mushrooms", "insects", "scales", "algae", "copper_ore", "salt", "leather" ],
+    "rare_resources": [ "herbs", "stone", "fish" ],
+    "nodes": ["roots", "reed", "berries", "mushrooms", "clay", "sea_marrow", "meat", "insects", "scales", "algae", "copper_ore", "salt"],
+    "fertile_soil": [ "common" ]
+  },
+  "rocky_ravine": {
+    "name": "Rocky Ravine",
+    "abundant_resources": [ "stone" ],
+    "common_resources": [ "reed", "scales", "coal", "amber", "grain", "herbs", "clay", "sea_marrow", "insects", "fish", "algae", "copper_ore", "plant_fiber" ],
+    "rare_resources": [ "wood", "berries", "roots", "scales", "herbs" ],
+    "nodes": [ "coal", "grain", "herbs", "clay", "sea_marrow", "insects", "reed", "fish", "algae", "copper_ore" ],
+    "fertile_soil": [ "rare" ]
+  }
+}

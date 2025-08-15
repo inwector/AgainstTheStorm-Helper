@@ -1,0 +1,37 @@
+﻿{
+  "humans": {
+    "name": "Humans",
+    "needs": [ "human_housing", "porridge", "biscuits", "pie", "coats", "leisure", "religion" ],
+    "specialization_bonus": [ "farming", "brewing" ]
+  },
+  "beavers": {
+    "name": "Beavers",
+    "needs": [ "beaver_housing", "biscuits", "pickled_goods", "coats", "leisure", "education", "luxury" ],
+    "specialization_bonus": [ "woodworking", "engineering" ]
+  },
+  "lizards": {
+    "name": "Lizards",
+    "needs": [ "lizard_housing", "jerky", "skewers", "pie", "pickled_goods", "boots", "brawling" ],
+    "specialization_bonus": [ "meat", "warmth" ]
+  },
+  "harpies": {
+    "name": "Harpies",
+    "needs": [ "harpy_housing", "jerky", "paste", "boots", "coats", "education", "treatment" ],
+    "specialization_bonus": [ "alchemy", "tailoring" ]
+  },
+  "foxes": {
+    "name": "Foxes",
+    "needs": [ "fox_housing", "porridge", "skewers", "pickled_goods", "boots", "religion", "treatment" ],
+    "specialization_bonus": [ "scouting", "cooperation" ]
+  },
+  "frogs": {
+    "name": "Frogs",
+    "needs": [ "frog_housing", "porridge", "paste", "pie", "boots", "brawling", "religion", "luxury" ],
+    "specialization_bonus": [ "masonry", "rainwater" ]
+  },
+  "bats": {
+    "name": "Bats",
+    "needs": [ "bat_housing", "biscuits", "paste", "skewers", "coats", "brawling", "education" ],
+    "specialization_bonus": [ "metallurgy" ]
+  }
+}

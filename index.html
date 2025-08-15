@@ -1,0 +1,1322 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Against the Storm Blueprint Optimizer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+            .header h1 {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+                background: linear-gradient(45deg, #ffd700, #ff6b35);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .header p {
+                font-size: 1.1rem;
+                opacity: 0.8;
+            }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+            .input-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: #e0e0e0;
+            }
+
+        select, input[type="checkbox"] {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            font-size: 14px;
+        }
+
+            select:focus {
+                outline: none;
+                border-color: #ffd700;
+                box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
+            }
+
+        .species-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+        }
+
+        .species-item {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+            .species-item:hover {
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .species-item.selected {
+                border-color: #ffd700;
+                background: rgba(255, 215, 0, 0.2);
+            }
+
+            .species-item input[type="checkbox"] {
+                width: auto;
+                margin-right: 8px;
+            }
+
+        .buildings-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1px;
+            max-height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .building-item {
+            display: flex;
+            align-items: center;
+            padding: 0px;
+            font-size: 14px;
+        }
+
+            .building-item input[type="checkbox"] {
+                width: auto;
+                margin-right: 8px;
+            }
+
+        .blueprint-options {
+            margin-top: 20px;
+        }
+
+        .blueprint-option {
+            margin-bottom: 15px;
+        }
+
+            .blueprint-option label {
+                font-weight: 600;
+                color: #ffd700;
+            }
+
+        .calculate-btn {
+            background: linear-gradient(45deg, #ff6b35, #ffd700);
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+            .calculate-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+            }
+
+            .calculate-btn:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+                transform: none;
+            }
+
+        .results {
+            min-height: 200px;
+        }
+
+        .loading {
+            text-align: center;
+            opacity: 0.7;
+            font-style: italic;
+            padding: 40px 20px;
+        }
+
+        .recommendation {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+            .recommendation.best {
+                border-color: #ffd700;
+                background: rgba(255, 215, 0, 0.2);
+            }
+
+            .recommendation h3 {
+                color: #ffd700;
+                margin-bottom: 10px;
+            }
+
+        .score {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+            .score.best {
+                color: #00ff88;
+            }
+
+            .score.good {
+                color: #ffd700;
+            }
+
+            .score.poor {
+                color: #ff6b35;
+            }
+
+        .reasoning {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .error {
+            background: rgba(255, 107, 53, 0.2);
+            border: 1px solid rgba(255, 107, 53, 0.5);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            color: #ff6b35;
+        }
+
+        .species-counter {
+            font-size: 0.9rem;
+            color: #ffd700;
+            margin-top: 5px;
+        }
+
+        .data-status {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+            .data-status.loaded {
+                border-left: 4px solid #00ff88;
+            }
+
+            .data-status.error {
+                border-left: 4px solid #ff6b35;
+            }
+
+        .details {
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .rainwater-selection {
+            display: flex;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .rainwater-option {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #26293a;
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+            .rainwater-option:hover {
+                background-color: #16213e;
+            }
+
+            .rainwater-option input[type="checkbox"] {
+                accent-color: #4a90e2; /* Nice blue checkmark */
+            }
+
+        .info-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 16px;
+            cursor: help;
+            margin-left: 5px;
+            position: relative;
+        }
+
+            .info-icon::before {
+                content: "i";
+                font-family: Arial, sans-serif;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Inwector's Against the Storm Blueprint Optimizer</h1>
+            <p>Choose the best blueprints for your settlement based on biome, species, and current buildings</p>
+        </div>
+
+        <div id="data-status" class="data-status">
+            📡 Loading game data...
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">🏗️ Settlement Configuration</h2>
+
+                <div class="input-group">
+                    <label for="biome-select">Biome:</label>
+                    <select id="biome-select">
+                        <option value="">Select a biome...</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label>Species (select exactly 3):</label>
+                    <div class="species-selection" id="species-selection">
+                        <!-- Species will be populated here -->
+                    </div>
+                    <div class="species-counter" id="species-counter">Selected: 0/3</div>
+                </div>
+
+                <div class="input-group">
+                    <label>Available Rainwater Types:</label>
+                    <div class="rainwater-selection" id="rainwater-selection">
+                        <label class="rainwater-option">
+                            <input type="checkbox" value="clearance">
+                            <span>💧 Clearance</span>
+                        </label>
+                        <label class="rainwater-option">
+                            <input type="checkbox" value="drizzle">
+                            <span>🌦️ Drizzle</span>
+                        </label>
+                        <label class="rainwater-option">
+                            <input type="checkbox" value="storm">
+                            <span>⛈️ Storm</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Current Buildings:</label>
+                    <div class="buildings-list" id="current-buildings">
+                        <!-- Buildings will be populated here -->
+                    </div>
+                </div>
+
+                <div class="blueprint-options">
+                    <label>
+                        Blueprint Options:
+                        <span class="info-icon" title="If you pick no blueprints, all buildings will be considered as picks"></span>
+                    </label>
+                    <div class="blueprint-option">
+                        <label for="blueprint-1">Option 1:</label>
+                        <select id="blueprint-1">
+                            <option value="">Select a building...</option>
+                        </select>
+                    </div>
+                    <div class="blueprint-option">
+                        <label for="blueprint-2">Option 2:</label>
+                        <select id="blueprint-2">
+                            <option value="">Select a building...</option>
+                        </select>
+                    </div>
+                    <div class="blueprint-option">
+                        <label for="blueprint-3">Option 3:</label>
+                        <select id="blueprint-3">
+                            <option value="">Select a building...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" id="calculate-btn" onclick="calculateOptimalBlueprint()">
+                    🧮 Calculate Best Choice
+                </button>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">📊 Recommendations</h2>
+                <div class="results" id="results">
+                    <div class="loading">
+                        Configure your settlement and blueprint options, then click "Calculate Best Choice" to see recommendations.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global data containers
+        let gameData = {
+            biomes: {},
+            species: {},
+            buildings: {},
+            recipes: {}
+        };
+
+        let dataLoadStatus = {
+            biomes: false,
+            species: false,
+            buildings: false,
+            recipes: false
+        };
+
+        // Species icons mapping
+        const speciesIcons = {
+            humans: '👥',
+            beavers: '🐿️',
+            lizards: '🦎',
+            harpies: '🦅',
+            foxes: '🦊',
+            frogs: '🐸',
+            bats: '🦇'
+        };
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function () {
+            loadGameData();
+        });
+
+        // Load all game data from JSON files
+        async function loadGameData() {
+            const dataStatus = document.getElementById('data-status');
+
+            try {
+                const files = {
+                    biomes: 'js/data/biomes.json',
+                    species: 'js/data/species.json',
+                    buildings: 'js/data/buildings.json',
+                    recipes: 'js/data/recipes.json'
+                };
+
+                const results = await Promise.allSettled(
+                    Object.values(files).map(loadJSON)
+                );
+
+                // Store data globally + log results
+                let i = 0;
+                for (const key of Object.keys(files)) {
+                    const result = results[i];
+                    if (result.status === 'fulfilled') {
+                        gameData[key] = result.value;
+                        console.log(`✅ ${files[key]} loaded`, result.value);
+                    } else {
+                        console.error(`❌ ${files[key]} failed`, result.reason);
+                        gameData[key] = null; // or {}
+                    }
+                    i++;
+                }
+
+
+                // Mark all as loaded
+                Object.keys(dataLoadStatus).forEach(key => dataLoadStatus[key] = true);
+
+                // Update status
+                dataStatus.textContent = '✅ Game data loaded successfully';
+                dataStatus.className = 'data-status loaded';
+
+                // Initialize UI components
+                initializeUI();
+
+            } catch (error) {
+                console.error('Error loading game data:', error);
+                dataStatus.textContent = `❌ Error loading game data: ${error.message}`;
+                dataStatus.className = 'data-status error';
+            }
+        }
+
+        // Helper function to load JSON files
+        async function loadJSON(filename) {
+            const response = await fetch(filename);
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filename}: ${response.statusText}`);
+            }
+            return await response.json();
+        }
+
+        // Initialize UI components after data is loaded
+        function initializeUI() {
+            populateBiomes();
+            populateSpecies();
+            populateBuildings();
+            populateBlueprintOptions();
+            initializeSpeciesSelection();
+            updateCalculateButton();
+        }
+
+        // Populate biome dropdown
+        function populateBiomes() {
+            const biomeSelect = document.getElementById('biome-select');
+
+            Object.entries(gameData.biomes).forEach(([key, biome]) => {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = biome.name;
+                biomeSelect.appendChild(option);
+            });
+        }
+
+        // Populate species selection
+        function populateSpecies() {
+            const speciesContainer = document.getElementById('species-selection');
+            speciesContainer.innerHTML = '';
+
+            Object.entries(gameData.species).forEach(([key, speciesData]) => {
+                const speciesItem = document.createElement('div');
+                speciesItem.className = 'species-item';
+                speciesItem.setAttribute('data-species', key);
+
+                const icon = speciesIcons[key] || '👥';
+
+                speciesItem.innerHTML = `
+                                    <input type="checkbox" id="${key}" value="${key}">
+                                    <span for="${key}">${icon} ${speciesData.name}</span>
+                                `;
+
+                speciesContainer.appendChild(speciesItem);
+            });
+        }
+
+        function populateBuildings() {
+            const buildingsContainer = document.getElementById('current-buildings');
+            buildingsContainer.innerHTML = '';
+
+            // 1. Get selected species from checkboxes
+            const selectedSpecies = Array.from(
+                document.querySelectorAll('#species-selection input[type="checkbox"]:checked')
+            ).map(cb => cb.value);
+
+            // Priority building keys
+            const priorityBuildings = ['field_kitchen', 'makeshift_post', 'crude_workstation'];
+
+            // Function to render a single building checkbox
+            function renderBuilding(key, building, preselect = false) {
+                const buildingItem = document.createElement('div');
+                buildingItem.className = 'building-item';
+                buildingItem.innerHTML = `
+                    <input type="checkbox" id="building-${key}" value="${key}" ${preselect ? 'checked' : ''}>
+                    <label for="building-${key}">${building.name}</label>
+                `;
+                buildingsContainer.appendChild(buildingItem);
+            }
+
+            // 2. First render priority buildings (if they match species filter)
+            priorityBuildings.forEach(key => {
+                const building = gameData.buildings[key];
+                if (!building) return;
+
+                if (
+                    building.species_exclusivity &&
+                    !selectedSpecies.includes(building.species_exclusivity)
+                ) {
+                    return; // skip if species doesn't match
+                }
+
+                renderBuilding(key, building, true); // always preselect
+            });
+
+            // 3. Render all other buildings
+            Object.entries(gameData.buildings).forEach(([key, building]) => {
+                // Skip priority buildings (already rendered)
+                if (priorityBuildings.includes(key)) return;
+
+                // Skip if exclusivity exists and is NOT in selectedSpecies
+                if (
+                    building.species_exclusivity &&
+                    !selectedSpecies.includes(building.species_exclusivity)
+                ) {
+                    return;
+                }
+
+                renderBuilding(key, building);
+            });
+        }
+
+
+        // Populate blueprint option dropdowns
+        function populateBlueprintOptions() {
+            const blueprintSelects = ['blueprint-1', 'blueprint-2', 'blueprint-3'];
+
+            blueprintSelects.forEach(selectId => {
+                const select = document.getElementById(selectId);
+
+                Object.entries(gameData.buildings).forEach(([key, building]) => {
+                    const option = document.createElement('option');
+                    option.value = key;
+                    option.textContent = building.name;
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        function initializeSpeciesSelection() {
+            const speciesItems = document.querySelectorAll('.species-item');
+            const speciesCounter = document.getElementById('species-counter');
+
+            speciesItems.forEach(item => {
+                const checkbox = item.querySelector('input[type="checkbox"]');
+
+                item.addEventListener('click', function (e) {
+                    if (e.target === checkbox) return;
+
+                    const selectedCount = document.querySelectorAll('.species-item input[type="checkbox"]:checked').length;
+
+                    if (!checkbox.checked && selectedCount >= 3) {
+                        return;
+                    }
+
+                    checkbox.checked = !checkbox.checked;
+                    updateSpeciesSelection();
+                });
+
+                checkbox.addEventListener('change', updateSpeciesSelection);
+            });
+
+            function updateSpeciesSelection() {
+                const selectedCount = document.querySelectorAll('.species-item input[type="checkbox"]:checked').length;
+                speciesCounter.textContent = `Selected: ${selectedCount}/3`;
+
+                speciesItems.forEach(item => {
+                    const checkbox = item.querySelector('input[type="checkbox"]');
+                    if (checkbox.checked) {
+                        item.classList.add('selected');
+                    } else {
+                        item.classList.remove('selected');
+                    }
+                });
+
+                updateCalculateButton();
+            }
+        }
+
+        function updateCalculateButton() {
+            const biome = document.getElementById('biome-select').value;
+            const selectedSpecies = document.querySelectorAll('.species-item input[type="checkbox"]:checked').length;
+            const blueprint1 = document.getElementById('blueprint-1').value;
+            const blueprint2 = document.getElementById('blueprint-2').value;
+            const blueprint3 = document.getElementById('blueprint-3').value;
+
+            const calculateBtn = document.getElementById('calculate-btn');
+            const dataLoaded = Object.values(dataLoadStatus).every(Boolean);
+
+            calculateBtn.disabled = !dataLoaded || !biome || selectedSpecies !== 3;
+        }
+
+        // Add event listeners for form validation
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(() => {
+                document.getElementById('biome-select')?.addEventListener('change', updateCalculateButton);
+                document.getElementById('blueprint-1')?.addEventListener('change', updateCalculateButton);
+                document.getElementById('blueprint-2')?.addEventListener('change', updateCalculateButton);
+                document.getElementById('blueprint-3')?.addEventListener('change', updateCalculateButton);
+            }, 1000);
+        });
+
+        // ==========================================
+        // MAIN CALCULATION FUNCTION - EDIT THIS!
+        // ==========================================
+
+        function calculateOptimalBlueprint() {
+            const biome = document.getElementById('biome-select').value;
+            const selectedSpecies = Array.from(document.querySelectorAll('.species-item input[type="checkbox"]:checked')).map(cb => cb.value);
+            const currentBuildings = Array.from(document.querySelectorAll('#current-buildings input[type="checkbox"]:checked')).map(cb => cb.value);
+            const availableRainwater = Array.from(document.querySelectorAll('.rainwater-option input[type="checkbox"]:checked')).map(cb => cb.value);
+            let blueprintOptions = [
+                document.getElementById('blueprint-1').value,
+                document.getElementById('blueprint-2').value,
+                document.getElementById('blueprint-3').value
+            ].filter(option => option);
+
+            if (blueprintOptions.length === 0) {
+                blueprintOptions = Object.keys(gameData.buildings);
+            }
+
+            if (!biome || selectedSpecies.length !== 3) {
+                showError('Please select a biome and exactly 3 species.');
+                return;
+            }
+
+            // Calculate scores for each blueprint option
+            const results = blueprintOptions.map(blueprint => {
+                const analysis = analyzeBlueprint(blueprint, biome, selectedSpecies, currentBuildings, availableRainwater);
+                return {
+                    building: blueprint,
+                    score: analysis.score,
+                    reasoning: analysis.reasoning,
+                    details: analysis.details
+                };
+            });
+
+            // Sort by score (highest first)
+            results.sort((a, b) => b.score - a.score);
+            displayResults(results);
+        }
+
+        // ==========================================
+        // YOUR ALGORITHM IMPLEMENTATION GOES HERE!
+        // ==========================================
+        function analyzeBlueprint(buildingKey, biomeKey, selectedSpecies, currentBuildings, availableRainwater) {
+            const building = gameData.buildings[buildingKey];
+            const biome = gameData.biomes[biomeKey];
+
+            let analysis = {
+                score: 0,
+                reasoning: [],
+                details: {
+                    speciesBonus: 0,
+                    resourceAvailability: 0,
+                    needsFulfillment: 0,
+                    productionValue: 0,
+                    prerequisiteFulfillment: 0,
+                    existingFulfillment: 0,
+                    rainwaterBonus: 0,
+                    inheritBonus: 0,
+                    fertileSoilBonus: 0,
+                    fertileUsefulnessScore: 0,
+                    isFarmUseless: 0
+                }
+            };
+
+            if (!building || !biome) {
+                analysis.reasoning.push('❌ Missing building or biome data');
+                return analysis;
+            }
+
+            // Base score
+            analysis.score = 0;
+
+            // 1) Exclusivity
+            if (building.exclusivity && building.exclusivity !== "") {
+                if (!selectedSpecies.includes(building.exclusivity)) {
+                    analysis.score = -1000;
+                    analysis.details.exclusivityCheck = -1000;
+                    analysis.reasoning.push(`❌ Cannot build: Exclusive to ${gameData.species[building.exclusivity]?.name}`);
+                    return analysis;
+                }
+            }
+
+            // 1.1) Houses
+            if (building.category == "housing")
+                analysis.score = 70;
+
+            // 1.2) Farms
+            if (building.category == "farming") {
+                // Fertile soil and farms
+                const fertileBonus = analyzeFertileSoilBonus(building, biome, currentBuildings);
+                analysis.details.fertileSoilBonus = fertileBonus;
+                analysis.reasoning.push(`<li>+${fertileBonus}: fertile soil is ${biome.fertile_soil} in ${biome.name}`);
+                analysis.score += fertileBonus;
+            }
+
+            // 1.3) Farms usefulness
+            if (building.category == "farming") {
+                // Fertile soil and farms usefulness
+                const fertileUsefulnessScore = analyzeFertileSoilUsefulness(building, biome, currentBuildings);
+                if (fertileUsefulnessScore != 0) {
+                    analysis.details.fertileUsefulnessScore = fertileUsefulnessScore;
+                    analysis.reasoning.push(`<li>+${fertileUsefulnessScore} produces useful products for existing buildings`);
+                    analysis.score += fertileUsefulnessScore;
+                }
+            }
+
+            // 1.4) Greenhouses
+            if (building.category == "farming") {
+
+                if (building.name == "Clay Pit" && !availableRainwater.includes("clearance")) {
+                    console.log(availableRainwater);
+                    analysis.score += -50;
+                    analysis.details.isFarmUseless = -50;
+                    analysis.reasoning.push(`<li>-50 lacking the required water to produce in this building`);
+                }
+
+                if (building.name == "Greenhouse" && !availableRainwater.includes("drizzle")) {
+                    console.log(availableRainwater);
+                    analysis.score += -50;
+                    analysis.details.isFarmUseless = -50;
+                    analysis.reasoning.push(`<li>-50 lacking the required water to produce in this building`);
+                }
+            }
+
+            // 2) Species specialization bonus (guard both sides)
+            selectedSpecies.forEach(speciesKey => {
+                const species = gameData.species[speciesKey];
+
+                if (species?.specialization_bonus && Array.isArray(building?.specialization_bonus)) {
+                    building.specialization_bonus.forEach(buildingSpec => {
+                        if (species.specialization_bonus.includes(buildingSpec)) {
+                            analysis.score += 15;
+                            analysis.details.speciesBonus += 15;
+                            analysis.reasoning.push(`<li>+15: ${species.name} specialize in ${buildingSpec}`);
+                        }
+                    });
+                }
+            });
+
+            // 3) Resource availability
+            const resourceScore = analyzeResourceAvailability(building, biome);
+            analysis.score += resourceScore;
+            analysis.details.resourceAvailability = resourceScore;
+            if (resourceScore > 0) analysis.reasoning.push(`<li>+${resourceScore}: Resource availability in biome`);
+            else if (resourceScore < 0) analysis.reasoning.push(`<li>${resourceScore}: Resource constraints`);
+
+            // 4) Needs fulfillment
+            const needsScore = analyzeNeedsFulfillment(building, selectedSpecies);
+            analysis.score += needsScore;
+            analysis.details.needsFulfillment = needsScore;
+            if (needsScore > 0) analysis.reasoning.push(`<li>+${needsScore}: Fulfills species needs`);
+
+            // 4.5) Service fulfillment
+            const serviceScore = analyzeServiceFulfillment(building, selectedSpecies);
+            analysis.score += serviceScore;
+            analysis.details.serviceFulfillment = needsScore;
+            if (serviceScore > 0) analysis.reasoning.push(`<li>+${serviceScore}: Fulfills species service`);
+
+
+            // 5) Production value
+            const productionScore = analyzeProductionValue(building);
+            analysis.score += productionScore;
+            analysis.details.productionValue = productionScore;
+            if (productionScore > 0) analysis.reasoning.push(`<li>+${productionScore}: High production value`);
+
+            // 6) Prerequisite fulfillment
+            const prereqScore = analyzeBuildingNeedsFulfilledByExisting(building, currentBuildings);
+            analysis.score += prereqScore;
+            if (prereqScore !== 0) {
+                analysis.reasoning.push(`<li>+${prereqScore}: Inputs can be produced by existing buildings`);
+            }
+            analysis.details.prerequisiteFulfillment = prereqScore;
+
+            // 7) Existing Building Recipe fulfillment
+            const existingScore = analyzeExistingNeedsFulfilledByBuilding(building, currentBuildings);
+            analysis.score += existingScore;
+            if (existingScore !== 0) {
+                analysis.reasoning.push(`<li>+${existingScore}: Outputs can be used by existing buildings`);
+            }
+            analysis.details.existingFulfillment = existingScore;
+
+            // 8) Recipe / production bonus
+            const recipeScore = analyzeRecipeBonus(building, currentBuildings);
+            analysis.score += recipeScore;
+            analysis.details.recipeBonus = recipeScore;
+            if (recipeScore > 0) {
+                analysis.reasoning.push(`<li>+${recipeScore}: Building contributes useful production`);
+            }
+
+            // 9) Rainwater bonus
+            const rainwaterScore = analyzeRainwaterMatch(building, availableRainwater);
+            analysis.score += rainwaterScore;
+            analysis.details.rainwaterBonus = rainwaterScore;
+            if (rainwaterScore > 0) {
+                analysis.reasoning.push(`<li>+${rainwaterScore}: Available rainwater`);
+            }
+
+            // 10) Inherit bonus
+            if (building.name == "Academy") {
+                analysis.score += 20;
+                analysis.reasoning.push(`<li>+20: Inherit bonus`);
+            }
+            if (building.name == "Bath House") {
+                analysis.score += 20;
+                analysis.reasoning.push(`<li>+20: Inherit bonus`);
+            }
+            if (building.name == "Clan Hall") {
+                analysis.score += 30;
+                analysis.reasoning.push(`<li>+30: Inherit bonus`);
+            }
+            if (building.name == "Feast Hall") {
+                analysis.score += 10;
+                analysis.reasoning.push(`<li>+10: Inherit bonus`);
+            }
+            if (building.name == "Forum") {
+                analysis.score += 10;
+                analysis.reasoning.push(`<li>+10: Inherit bonus`);
+            }
+            if (building.name == "Guild House") {
+                analysis.score += 10;
+                analysis.reasoning.push(`<li>+10: Inherit bonus`);
+            }
+            if (building.name == "Holy Guild House") {
+                analysis.score += 20;
+                analysis.reasoning.push(`<li>+20: Inherit bonus`);
+            }
+            if (building.name == "Holy Market") {
+                analysis.score += 10;
+                analysis.reasoning.push(`<li>+10: Inherit bonus`);
+            }
+            if (building.name == "Holy Temple") {
+                analysis.score += 20;
+                analysis.reasoning.push(`<li>+20: Inherit bonus`);
+            }
+            if (building.name == "Market") {
+                analysis.score += 10;
+                analysis.reasoning.push(`<li>+10: Inherit bonus`);
+            }
+            if (building.name == "Monastery") {
+                analysis.score += 20;
+                analysis.reasoning.push(`<li>+20: Inherit bonus`);
+            }
+            if (building.name == "Tavern") {
+                analysis.score += 30;
+                analysis.reasoning.push(`<li>+30: Inherit bonus`);
+            }
+            if (building.name == "Tea Doctor") {
+                analysis.score += 0;
+            }
+            if (building.name == "Temple") {
+                analysis.score += 0;
+            }
+            if (building.name == "Advanced Rain Collector") {
+                analysis.score += 60;
+                analysis.reasoning.push(`<li>+60: Inherit bonus`);
+
+            };
+
+
+            return analysis;
+        }
+
+
+        function analyzeResourceAvailability(building, biome) {
+            let score = 0;
+
+            // Normalize recipe list to an array of keys
+            let recipeKeys = [];
+            if (Array.isArray(building?.recipes)) {
+                recipeKeys = building.recipes;
+            } else if (building?.recipes && typeof building.recipes === 'object') {
+                recipeKeys = Object.keys(building.recipes);
+            }
+
+            // If no recipes, return 0 score
+            if (recipeKeys.length === 0) return score;
+
+            // Normalize biome resources
+            const abundant = Array.isArray(biome?.abundant_resources) ? biome.abundant_resources : [];
+            const common = Array.isArray(biome?.common_resources) ? biome.common_resources : [];
+            const rare = Array.isArray(biome?.rare_resources) ? biome.rare_resources : [];
+            const nodes = Array.isArray(biome?.nodes) ? biome.nodes : [];
+
+            recipeKeys.forEach(recipeKey => {
+                let recipe = null;
+
+                if (typeof recipeKey === "string") {
+                    recipe = gameData.recipes?.[recipeKey];
+                } else if (recipeKey && typeof recipeKey === "object" && recipeKey.name) {
+                    recipe = gameData.recipes?.[recipeKey.name] || recipeKey;
+                }
+
+                if (building.category == "resource_acquisition")
+                    if (nodes.includes(recipeKey)) {
+                        score += 50;
+                        return score
+                    }
+
+                if (building.category == "production") {
+                    recipe.ingredients.forEach(ingredient => {
+                        const options = Array.isArray(ingredient.options) ? ingredient.options : [];
+                        if (options.length === 0) return;
+
+                        if (options.some(r => abundant.includes(r))) score += 15;
+                        if (options.some(r => common.includes(r))) score += 10;
+                        if (options.every(r => rare.includes(r))) score += 5;
+                    });
+                }
+
+            });
+
+            return score;
+        }
+
+
+
+
+        function analyzeNeedsFulfillment(building, selectedSpecies) {
+            let score = 0;
+            const recipes = Array.isArray(building?.recipes) ? building.recipes : [];
+            const needsFulfillment = {
+                porridge: ['porridge'],
+                biscuits: ['biscuits'],
+                pie: ['pie'],
+                jerky: ['jerky'],
+                pickled_goods: ['pickled_goods'],
+                skewers: ['skewers'],
+                paste: ['paste'],
+                coats: ['coats'],
+                boots: ['boots'],
+            };
+
+            selectedSpecies.forEach(speciesKey => {
+                const species = gameData.species[speciesKey];
+                species?.needs?.forEach(need => {
+                    const fulfillers = needsFulfillment[need];
+                    if (!fulfillers) return;
+                    recipes.forEach(recipeKey => {
+                        const recipe = gameData.recipes[recipeKey];
+                        if (recipe?.output && fulfillers.includes(recipe.output.item)) {
+                            score += 10;
+                        }
+                    });
+                });
+            });
+
+            return score;
+        }
+
+        function analyzeServiceFulfillment(building, selectedSpecies) {
+            let score = 0;
+            const serviceTypes = Array.isArray(building?.service_type) ? building.service_type : [];
+
+            selectedSpecies.forEach(speciesKey => {
+                const species = gameData.species[speciesKey];
+                species?.needs?.forEach(need => {
+                    if (serviceTypes.includes(need)) {
+                        score += 20; // same score as before for fulfilling a need
+                    }
+                });
+            });
+
+            return score;
+        }
+
+        function analyzeProductionValue(building) {
+            let score = 0;
+            const recipes = Array.isArray(building?.recipes) ? building.recipes : [];
+            const planks = ['planks'];
+            const essential = ['bricks', 'fabric'];
+            const tradable = ['pack_of_luxury_goods', 'pack_of_trade_goods'];
+            const useful = ['tools', 'wildfire_essence', 'amber', 'pack_of_building_materials', 'pack_of_provisions', 'training_gear', 'parts', 'pipes'];
+            const fuel = ['oil', 'coal'];
+
+            recipes.forEach(recipeKey => {
+                const recipe = gameData.recipes[recipeKey];
+                const item = recipe?.output?.item;
+                if (!item) return;
+
+                if (planks.includes(item)) score += 50;
+                else if (essential.includes(item)) score += 30;
+                else if (tradable.includes(item)) score += 15;
+                else if (useful.includes(item)) score += 10;
+                else if (fuel.includes(item)) score += 5;
+
+                // If you have recipe.stars, prefer that to key matching:
+                // if (typeof recipe.stars === 'number') score += Math.max(0, recipe.stars - 1) * 3;
+                if (recipeKey.includes('3star')) score += 10;
+            });
+
+            return score;
+        }
+
+        function analyzeBuildingNeedsFulfilledByExisting(newBuilding, currentBuildings) {
+            let score = 0;
+            let reasons = [];
+
+            if (!newBuilding.recipes?.length) {
+                return { score, reasons };
+            }
+
+            newBuilding.recipes.forEach(recipeKey => {
+                const recipe = gameData.recipes?.[recipeKey];
+                if (!recipe?.ingredients) return;
+
+                recipe.ingredients.forEach(ingredient => {
+                    const options = ingredient.options || [];
+
+                    const canBeProduced = options.some(resource => {
+                        return currentBuildings.some(buildingKey => {
+                            const existing = gameData.buildings[buildingKey];
+                            return existing?.recipes?.some(existingRecipeKey => {
+                                const existingRecipe = gameData.recipes?.[existingRecipeKey];
+                                return existingRecipe?.output?.item === resource;
+                            });
+                        });
+                    });
+
+                    if (canBeProduced) {
+                        score += 5;
+                        reasons.push(`Ingredient "${options.join(' or ')}" for new building can be produced by an existing building.`);
+                    }
+                });
+            });
+
+            return score;
+        }
+
+
+        function analyzeExistingNeedsFulfilledByBuilding(newBuilding, currentBuildings) {
+            let score = 0;
+            let reasons = [];
+
+            if (!newBuilding.recipes?.length) {
+                return { score, reasons };
+            }
+
+            // Gather outputs of the new building
+            const newOutputs = newBuilding.recipes
+                .map(rKey => gameData.recipes?.[rKey]?.output?.item)
+                .filter(Boolean);
+
+            currentBuildings.forEach(buildingKey => {
+                const existing = gameData.buildings[buildingKey];
+                if (!existing?.recipes) return;
+
+                existing.recipes.forEach(recipeKey => {
+                    const recipe = gameData.recipes?.[recipeKey];
+                    if (!recipe?.ingredients) return;
+
+                    recipe.ingredients.forEach(ingredient => {
+                        const options = ingredient.options || [];
+
+                        if (options.some(opt => newOutputs.includes(opt))) {
+                            // Extra points if no other building currently produces this
+                            const isCurrentlyBlocked = !currentBuildings.some(otherKey => {
+                                if (otherKey === buildingKey) return false;
+                                const otherBuilding = gameData.buildings[otherKey];
+                                return otherBuilding?.recipes?.some(otherRecipeKey => {
+                                    const otherOutput = gameData.recipes?.[otherRecipeKey]?.output?.item;
+                                    return options.includes(otherOutput);
+                                });
+                            });
+
+                            const points = isCurrentlyBlocked ? 8 : 5;
+                            score += points;
+
+                            reasons.push(
+                                `Existing building "${buildingKey}" needs "${options.join(' or ')}" ` +
+                                `which the new building can produce (${isCurrentlyBlocked ? 'currently blocked → +8' : '+5'})`
+                            );
+                        }
+                    });
+                });
+            });
+
+            return score;
+        }
+
+
+        function analyzeRecipeBonus(building, currentBuildings) {
+            let score = 0;
+
+            // All output items for THIS building
+            const outputs = (building.recipes || [])
+                .map(rKey => gameData.recipes[rKey]?.output?.item)
+                .filter(Boolean); // remove null/undefined
+
+            outputs.forEach(outputItem => {
+                // Find highest star quality for this output in current buildings
+                let maxStar = -1;
+
+                currentBuildings.forEach(bKey => {
+                    const b = gameData.buildings[bKey];
+                    if (!b?.recipes) return;
+
+                    b.recipes.forEach(rKey => {
+                        const recipe = gameData.recipes[rKey];
+                        if (recipe?.output?.item === outputItem) {
+                            // Extract star rating from recipe key like "barrels_3star"
+                            const starMatch = rKey.match(/(\d)star$/);
+                            const stars = starMatch ? parseInt(starMatch[1], 10) : 1;
+                            maxStar = Math.max(maxStar, stars);
+                        }
+                    });
+                });
+
+                // Compare against this building's star rating for that recipe
+                const buildingStar = building.recipes.reduce((star, rKey) => {
+                    const recipe = gameData.recipes[rKey];
+                    if (recipe?.output?.item === outputItem) {
+                        const starMatch = rKey.match(/(\d)star$/);
+                        return Math.max(star, starMatch ? parseInt(starMatch[1], 10) : 1);
+                    }
+                    return star;
+                }, 0);
+
+                if (maxStar == -1) {
+                    score += 20; // Can't produce this at all yet → big bonus
+                } else if (buildingStar <= maxStar) {
+                    score += -20; // Can already produce it
+                } else {
+                    score += 10; // Produces it better → medium bonus
+                }
+            });
+
+            return score;
+
+        }
+
+        function analyzeRainwaterMatch(building, availableRainwater) {
+            if (!building?.rain_engine) return 0;
+            return availableRainwater.includes(building.rain_engine) ? 10 : 0;
+        }
+
+        function analyzeFertileSoilBonus(building, biome, currentBuildings) {
+            let score = 0;
+
+            // Determine fertile soil abundance multiplier
+            let soilLevel = biome.fertile_soil?.[0] || "common";
+            let soilMultiplier = 0;
+            switch (soilLevel) {
+                case "abundant": soilMultiplier = 1.5; break;
+                case "common": soilMultiplier = 1.0; break;
+                case "rare": soilMultiplier = 0.5; break;
+            }
+            score += 40 * soilMultiplier;
+            return score
+        }
+
+        function analyzeFertileSoilUsefulness(building, biome, currentBuildings) {
+
+            let score = 0;
+            // Check each "product_xstar" from the building's recipes
+            building.recipes.forEach(rKey => {
+                const match = rKey.match(/^(.+?)_(\d)star$/);
+                if (!match) return;
+
+                const product = match[1]; // e.g., "resin"
+                const stars = parseInt(match[2], 10);
+
+                // Check if this product is useful in existing buildings' recipes
+                let isUseful = false;
+                currentBuildings.forEach(bKey => {
+                    const cb = gameData.buildings[bKey];
+                    cb.recipes?.forEach(recipeKey => {
+                        const recipe = gameData.recipes[recipeKey];
+                        if (!recipe?.ingredients) return;
+
+                        // Check all ingredient slots
+                        recipe.ingredients.forEach(ingredient => {
+                            if (ingredient.options?.includes(product)) {
+                                isUseful = true;
+                            }
+                        });
+                    });
+                });
+
+                if (isUseful) {
+                    let productScore = 20 * stars;
+                    score += productScore;
+                }
+            });
+
+            return score;
+        }
+
+
+        // ==========================================
+        // DISPLAY FUNCTIONS
+        // ==========================================
+
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('results');
+
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<div class="error">No valid blueprint options found.</div>';
+                return;
+            }
+
+            const maxScore = Math.max(...results.map(r => r.score));
+
+            let html = '';
+
+            results.forEach((result, index) => {
+                const building = gameData.buildings[result.building];
+                const isBest = index === 0 && result.score > 0;
+                const scoreClass = result.score >= maxScore * 0.8 ? 'best' :
+                    result.score >= maxScore * 0.6 ? 'good' : 'poor';
+
+
+                html += `
+                                    <div class="recommendation ${isBest ? 'best' : ''}">
+                                        <h3>${isBest ? '🏆 ' : ''}${building?.name || result.building} ${isBest ? '(Recommended)' : ''}</h3>
+                                        <div class="score ${scoreClass}">Score: ${result.score.toFixed(1)}</div>
+                                        <div class="reasoning">${result.reasoning.join('  ')}</div>
+                                    </div>
+                                `;
+            });
+
+            resultsContainer.innerHTML = html;
+        }
+
+        function showError(message) {
+            const resultsContainer = document.getElementById('results');
+            resultsContainer.innerHTML = `<div class="error">${message}</div>`;
+        }
+    </script>
+</body>
+</html>
