@@ -513,11 +513,12 @@
                     </div>
                 </div>
 
-                <div class="input-group">
-                    <label>Current Buildings:</label>
-                    <div class="buildings-list" id="current-buildings">
-                        <!-- Buildings will be populated here -->
-                    </div>
+                <div class="input-group" style="display: flex; align-items: center; gap: 10px; margin-bottom:2px">
+                    <label for="building-filter">Current Buildings:</label>
+                    <input type="text" id="building-filter" style="margin-bottom:6px"  placeholder="Filter buildings...">
+                </div>
+                <div class="buildings-list" id="current-buildings">
+                    <!-- Buildings will be populated here -->
                 </div>
 
                 <div class="blueprint-options">
@@ -587,6 +588,25 @@
     </div>
 
     <script>
+
+        const buildingFilter = document.getElementById('building-filter');
+        const buildingsList = document.getElementById('current-buildings');
+
+        buildingFilter.addEventListener('input', () => {
+            const filterText = buildingFilter.value.toLowerCase();
+            const buildingItems = buildingsList.querySelectorAll('.building-item');
+
+            buildingItems.forEach(item => {
+                const label = item.querySelector('label').textContent.toLowerCase();
+                if (label.includes(filterText)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+
         // Global data containers
         let gameData = {
             biomes: {},
