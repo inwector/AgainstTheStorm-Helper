@@ -750,6 +750,21 @@
     "service_type": [ "" ],
     "workers": 2
   },
+  "deneme_binasi": {
+    "name": "denemebinasi",
+    "category": "production",
+    "construction_cost": {
+      "planks": 4,
+      "bricks": 4,
+      "fabric": 4
+    },
+    "recipes": [ "incense_2star", "ale_2star" ],
+    "specialization_bonus": [ "" ],
+    "rain_engine": "storm",
+    "exclusivity": "",
+    "service_type": [ "" ],
+    "workers": 2
+  },
   "clay_pit": {
     "name": "Clay Pit",
     "category": "farming",

@@ -642,6 +642,10 @@
         // Initialize the application
         document.addEventListener('DOMContentLoaded', function () {
             loadGameData();
+            // Add this new line with a small delay to ensure UI is ready
+            setTimeout(() => {
+                initializeBuildingSelectionHandlers();
+            }, 100);
         });
 
         // Load all game data from JSON files
@@ -760,10 +764,11 @@
             function renderBuilding(key, building, preselect = false) {
                 const buildingItem = document.createElement('div');
                 buildingItem.className = 'building-item';
+                buildingItem.setAttribute('data-building-key', key); // Add this line to store the building key
                 buildingItem.innerHTML = `
-                    <input type="checkbox" id="building-${key}" value="${key}" ${preselect ? 'checked' : ''}>
-                    <label for="building-${key}">${building.name}</label>
-                `;
+            <input type="checkbox" id="building-${key}" value="${key}" ${preselect ? 'checked' : ''}>
+            <label for="building-${key}">${building.name}</label>
+        `;
                 buildingsContainer.appendChild(buildingItem);
             }
 
@@ -797,6 +802,9 @@
 
                 renderBuilding(key, building);
             });
+
+            // After populating buildings, update blueprint options
+            populateBlueprintOptions();
         }
 
 
@@ -804,17 +812,64 @@
         function populateBlueprintOptions() {
             const blueprintSelects = ['blueprint-1', 'blueprint-2', 'blueprint-3', 'blueprint-4'];
 
+            // Get excluded buildings
+            const excludedBasic = ['field_kitchen', 'makeshift_post', 'crude_workstation'];
+            const currentBuildings = getCurrentSelectedBuildings(); // Get currently selected buildings
+
             blueprintSelects.forEach(selectId => {
                 const select = document.getElementById(selectId);
+                const currentValue = select.value; // Preserve current selection if still valid
+
+                // Clear existing options except the default
+                select.innerHTML = '<option value="">Select a building...</option>';
 
                 Object.entries(gameData.buildings).forEach(([key, building]) => {
-                    const option = document.createElement('option');
-                    option.value = key;
-                    option.textContent = building.name;
-                    select.appendChild(option);
+                    // Check exclusion criteria
+                    const isExcludedBasic = excludedBasic.includes(key);
+                    const isCurrentBuilding = currentBuildings.includes(key);
+                    const hasHolyHallowed = building.name.includes('Holy') || building.name.includes('Hallowed') || building.name.includes('Flawless');
+
+                    // Only add if not excluded
+                    if (!isExcludedBasic && !isCurrentBuilding && !hasHolyHallowed) {
+                        const option = document.createElement('option');
+                        option.value = key;
+                        option.textContent = building.name;
+                        select.appendChild(option);
+                    }
                 });
+
+                // Restore previous selection if it's still valid
+                if (currentValue && select.querySelector(`option[value="${currentValue}"]`)) {
+                    select.value = currentValue;
+                }
             });
         }
+
+        // Helper function to get currently selected buildings from the current buildings list
+        function getCurrentSelectedBuildings() {
+            const selectedBuildings = [];
+            const checkedBoxes = document.querySelectorAll('#current-buildings input[type="checkbox"]:checked');
+
+            checkedBoxes.forEach(checkbox => {
+                selectedBuildings.push(checkbox.value);
+            });
+
+            return selectedBuildings;
+        }
+
+
+        function initializeBuildingSelectionHandlers() {
+            const currentBuildingsContainer = document.getElementById('current-buildings');
+
+            // Use event delegation to handle checkbox changes
+            currentBuildingsContainer.addEventListener('change', function (event) {
+                if (event.target.type === 'checkbox') {
+                    // Update blueprint options whenever a building checkbox changes
+                    populateBlueprintOptions();
+                }
+            });
+        }
+
 
         function initializeSpeciesSelection() {
             const speciesItems = document.querySelectorAll('.species-item');
@@ -852,6 +907,8 @@
                     }
                 });
 
+                // Refresh buildings when species selection changes (this affects building exclusivity)
+                populateBuildings();
                 updateCalculateButton();
             }
         }
@@ -993,14 +1050,12 @@
             if (building.category == "farming") {
 
                 if (building.name == "Clay Pit" && !availableRainwater.includes("clearance")) {
-                    console.log(availableRainwater);
                     analysis.score += -50;
                     analysis.details.isFarmUseless = -50;
                     analysis.reasoning.push(`<li>-50 lacking the required water to produce in this building`);
                 }
 
                 if (building.name == "Greenhouse" && !availableRainwater.includes("drizzle")) {
-                    console.log(availableRainwater);
                     analysis.score += -50;
                     analysis.details.isFarmUseless = -50;
                     analysis.reasoning.push(`<li>-50 lacking the required water to produce in this building`);
@@ -1186,9 +1241,9 @@
                         const options = Array.isArray(ingredient.options) ? ingredient.options : [];
                         if (options.length === 0) return;
 
-                        if (options.some(r => abundant.includes(r))) score += 15;
-                        if (options.some(r => common.includes(r))) score += 10;
-                        if (options.every(r => rare.includes(r))) score += 5;
+                        if (options.some(r => abundant.includes(r))) score += 10;
+                        if (options.some(r => common.includes(r))) score += 5;
+                        if (options.every(r => rare.includes(r))) score += 2;
                     });
                 }
 
@@ -1213,6 +1268,12 @@
                 paste: ['paste'],
                 coats: ['coats'],
                 boots: ['boots'],
+                religion: ['incense'],
+                treatment: ['tea'],
+                education: ['scrolls'],
+                luxury: ['wine'],
+                brawling: ['training_gear'],
+                leisure: ['ale']
             };
 
             selectedSpecies.forEach(speciesKey => {
@@ -1223,7 +1284,7 @@
                     recipes.forEach(recipeKey => {
                         const recipe = gameData.recipes[recipeKey];
                         if (recipe?.output && fulfillers.includes(recipe.output.item)) {
-                            score += 10;
+                            score += 20;
                         }
                     });
                 });
