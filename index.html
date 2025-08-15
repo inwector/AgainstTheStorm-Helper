@@ -324,6 +324,145 @@
                 content: "i";
                 font-family: Arial, sans-serif;
             }
+
+        .footer-social {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+        }
+
+            .footer-social h3 {
+                color: #ffd700;
+                margin-bottom: 20px;
+                font-size: 1.4rem;
+            }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+            padding: 20px 15px;
+            border-radius: 15px;
+            min-width: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+            .footer-link:hover {
+                background: rgba(255,255,255,0.15);
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            }
+
+            .footer-link .icon {
+                font-size: 2.5rem;
+                margin-bottom: 12px;
+                transition: transform 0.3s ease;
+            }
+
+            .footer-link:hover .icon {
+                transform: scale(1.1);
+            }
+
+            .footer-link .platform {
+                font-weight: 600;
+                margin-bottom: 4px;
+                font-size: 1.1rem;
+            }
+
+            .footer-link .handle {
+                font-size: 0.85rem;
+                opacity: 0.8;
+            }
+
+            /* Platform-specific styling */
+            .footer-link.youtube .icon {
+                color: #ff0000;
+            }
+
+            .footer-link.youtube:hover {
+                border-color: #ff0000;
+                box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2);
+            }
+
+            .footer-link.discord .icon {
+                color: #5865f2;
+            }
+
+            .footer-link.discord:hover {
+                border-color: #5865f2;
+                box-shadow: 0 10px 25px rgba(88, 101, 242, 0.2);
+            }
+
+            .footer-link.twitch .icon {
+                color: #9146ff;
+            }
+
+            .footer-link.twitch:hover {
+                border-color: #9146ff;
+                box-shadow: 0 10px 25px rgba(145, 70, 255, 0.2);
+            }
+
+            .footer-link.kick .icon {
+                color: #53fc18;
+            }
+
+            .footer-link.kick:hover {
+                border-color: #53fc18;
+                box-shadow: 0 10px 25px rgba(83, 252, 24, 0.2);
+            }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .footer-links {
+                gap: 20px;
+            }
+
+            .footer-link {
+                min-width: 100px;
+                padding: 15px 10px;
+            }
+
+                .footer-link .icon {
+                    font-size: 2rem;
+                    margin-bottom: 8px;
+                }
+
+                .footer-link .platform {
+                    font-size: 1rem;
+                }
+
+                .footer-link .handle {
+                    font-size: 0.8rem;
+                }
+        }
+
+        @media (max-width: 480px) {
+            .footer-links {
+                gap: 15px;
+                justify-content: space-evenly;
+            }
+
+            .footer-link {
+                min-width: 80px;
+                padding: 12px 8px;
+            }
+
+            .footer-social h3 {
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -418,6 +557,31 @@
                         Configure your settlement and blueprint options, then click "Calculate Best Choice" to see recommendations.
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="footer-social">
+            <h3>Connect with Inwector</h3>
+            <div class="footer-links">
+                <a href="https://youtube.com/@inwector" target="_blank" class="footer-link youtube">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 180"><path fill="#f00" d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134" /><path fill="#fff" d="m102.421 128.06l66.328-38.418l-66.328-38.418z" /></svg>
+                    <div class="platform">YouTube</div>
+                    <div class="handle">@inwector</div>
+                </a>
+                <a href="https://discord.gg/dxXqAceNaD" target="_blank" class="footer-link discord">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 199"><path fill="#5865f2" d="M216.856 16.597A208.5 208.5 0 0 0 164.042 0c-2.275 4.113-4.933 9.645-6.766 14.046q-29.538-4.442-58.533 0c-1.832-4.4-4.55-9.933-6.846-14.046a207.8 207.8 0 0 0-52.855 16.638C5.618 67.147-3.443 116.4 1.087 164.956c22.169 16.555 43.653 26.612 64.775 33.193A161 161 0 0 0 79.735 175.3a136.4 136.4 0 0 1-21.846-10.632a109 109 0 0 0 5.356-4.237c42.122 19.702 87.89 19.702 129.51 0a132 132 0 0 0 5.355 4.237a136 136 0 0 1-21.886 10.653c4.006 8.02 8.638 15.67 13.873 22.848c21.142-6.58 42.646-16.637 64.815-33.213c5.316-56.288-9.08-105.09-38.056-148.36M85.474 135.095c-12.645 0-23.015-11.805-23.015-26.18s10.149-26.2 23.015-26.2s23.236 11.804 23.015 26.2c.02 14.375-10.148 26.18-23.015 26.18m85.051 0c-12.645 0-23.014-11.805-23.014-26.18s10.148-26.2 23.014-26.2c12.867 0 23.236 11.804 23.015 26.2c0 14.375-10.148 26.18-23.015 26.18"/></svg>
+                    <div class="platform">Discord</div>
+                    <div class="handle">Join Server</div>
+                </a>
+                <a href="https://twitch.tv/inwector" target="_blank" class="footer-link twitch">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 268"><path fill="#5a3e85" d="M17.458 0L0 46.556v186.201h63.983v34.934h34.931l34.898-34.934h52.36L256 162.954V0zm23.259 23.263H232.73v128.029l-40.739 40.741H128L93.113 226.92v-34.886H40.717zm64.008 116.405H128V69.844h-23.275zm63.997 0h23.27V69.844h-23.27z" /></svg>
+                    <div class="platform">Twitch</div>
+                    <div class="handle">@inwector</div>
+                </a>
+                <a href="https://kick.com/inwector" target="_blank" class="footer-link kick">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 290"><path fill="#05ce78" d="m209.302 144.583l26.28-26.105c27.224-27.042 27.224-71.087 0-98.129s-71.564-27.043-98.788 0l-9.569 9.504C114.557 11.781 93.667 0 69.812 0C31.267 0 0 31.059 0 69.346v150.34c0 38.287 31.267 69.346 69.812 69.346c23.855 0 44.745-11.781 57.413-29.854l9.569 9.505c27.224 27.043 71.564 27.043 98.788 0s27.224-71.086 0-98.129z" /></svg>
+                    <div class="platform">Kick</div>
+                    <div class="handle">@inwector</div>
+                </a>
             </div>
         </div>
     </div>
@@ -1317,6 +1481,10 @@
             const resultsContainer = document.getElementById('results');
             resultsContainer.innerHTML = `<div class="error">${message}</div>`;
         }
+    </script>
+    <script>
+        src = "https://kit.fontawesome.com/c01fbeac04.js"
+        crossorigin="anonymous"
     </script>
 </body>
 </html>
