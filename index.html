@@ -544,6 +544,12 @@
                             <option value="">Select a building...</option>
                         </select>
                     </div>
+                    <div class="blueprint-option">
+                        <label for="blueprint-4">Option 4:</label>
+                        <select id="blueprint-4">
+                            <option value="">Select a building...</option>
+                        </select>
+                    </div>
                 </div>
 
                 <button class="calculate-btn" id="calculate-btn" onclick="calculateOptimalBlueprint()">
@@ -796,7 +802,7 @@
 
         // Populate blueprint option dropdowns
         function populateBlueprintOptions() {
-            const blueprintSelects = ['blueprint-1', 'blueprint-2', 'blueprint-3'];
+            const blueprintSelects = ['blueprint-1', 'blueprint-2', 'blueprint-3', 'blueprint-4'];
 
             blueprintSelects.forEach(selectId => {
                 const select = document.getElementById(selectId);
@@ -856,6 +862,7 @@
             const blueprint1 = document.getElementById('blueprint-1').value;
             const blueprint2 = document.getElementById('blueprint-2').value;
             const blueprint3 = document.getElementById('blueprint-3').value;
+            const blueprint4 = document.getElementById('blueprint-4').value;
 
             const calculateBtn = document.getElementById('calculate-btn');
             const dataLoaded = Object.values(dataLoadStatus).every(Boolean);
@@ -870,6 +877,7 @@
                 document.getElementById('blueprint-1')?.addEventListener('change', updateCalculateButton);
                 document.getElementById('blueprint-2')?.addEventListener('change', updateCalculateButton);
                 document.getElementById('blueprint-3')?.addEventListener('change', updateCalculateButton);
+                document.getElementById('blueprint-4')?.addEventListener('change', updateCalculateButton);
             }, 1000);
         });
 
@@ -885,7 +893,8 @@
             let blueprintOptions = [
                 document.getElementById('blueprint-1').value,
                 document.getElementById('blueprint-2').value,
-                document.getElementById('blueprint-3').value
+                document.getElementById('blueprint-3').value,
+                document.getElementById('blueprint-4').value
             ].filter(option => option);
 
             if (blueprintOptions.length === 0) {
