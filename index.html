@@ -1035,7 +1035,16 @@
                 analysis.score += fertileBonus;
             }
 
-            // 1.3) Farms usefulness
+            // 1.3) Do you have a farm while choosing another farm?
+            if (building.category == "farming") {
+                const farmExistsPoints = isFarmWhileFarmingBuildingExists(building, biome, currentBuildings);
+                analysis.details.fertileSoilBonus = farmExistsPoints;
+                analysis.reasoning.push(`<li>+${farmExistsPoints}: fertile soil can already be used by other buildings`);
+                analysis.score += farmExistsPoints;
+            }
+            
+
+            // 1.4) Farms usefulness
             if (building.category == "farming") {
                 // Fertile soil and farms usefulness
                 const fertileUsefulnessScore = analyzeFertileSoilUsefulness(building, biome, currentBuildings);
@@ -1046,7 +1055,7 @@
                 }
             }
 
-            // 1.4) Greenhouses
+            // 1.5) Greenhouses
             if (building.category == "farming") {
 
                 if (building.name == "Clay Pit" && !availableRainwater.includes("clearance")) {
@@ -1490,7 +1499,22 @@
                 case "common": soilMultiplier = 1.0; break;
                 case "rare": soilMultiplier = 0.5; break;
             }
+
+
             score += 40 * soilMultiplier;
+            return score
+        }
+
+        function isFarmWhileFarmingBuildingExists(building, biome, currentBuildings) {
+            let score = 0;
+
+            currentBuildings.forEach(bKey => {
+                const cb = gameData.buildings[bKey];
+
+                if (cb.category == "farming")
+                    score -= 40
+            })
+
             return score
         }
 
