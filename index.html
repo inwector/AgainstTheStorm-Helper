@@ -1039,7 +1039,7 @@
             if (building.category == "farming") {
                 const farmExistsPoints = isFarmWhileFarmingBuildingExists(building, biome, currentBuildings);
                 analysis.details.fertileSoilBonus = farmExistsPoints;
-                analysis.reasoning.push(`<li>+${farmExistsPoints}: fertile soil can already be used by other buildings`);
+                analysis.reasoning.push(`<li>${farmExistsPoints}: fertile soil can already be used by other buildings`);
                 analysis.score += farmExistsPoints;
             }
             
@@ -1512,7 +1512,7 @@
                 const cb = gameData.buildings[bKey];
 
                 if (cb.category == "farming")
-                    score -= 40
+                    score -= 100
             })
 
             return score
