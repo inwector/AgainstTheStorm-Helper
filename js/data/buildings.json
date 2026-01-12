@@ -750,6 +750,19 @@
     "service_type": [ "" ],
     "workers": 2
   },
+  "brineworks": {
+    "name": "Brineworks",
+    "category": "farming",
+    "construction_cost": {
+      "planks": 2
+    },
+    "recipes": [ "insects_1star", "salt_2star" ],
+    "specialization_bonus": [ "farming" ],
+    "rain_engine": "",
+    "exclusivity": "",
+    "service_type": [ "" ],
+    "workers": 2
+  },
   "clay_pit": {
     "name": "Clay Pit",
     "category": "farming",
@@ -865,19 +878,6 @@
       "planks": 2
     },
     "recipes": [ "vegetables_1star", "grain_2star" ],
-    "specialization_bonus": [ "farming" ],
-    "rain_engine": "",
-    "exclusivity": "",
-    "service_type": [ "" ],
-    "workers": 2
-  },
-  "brineworks": {
-    "name": "Brineworks",
-    "category": "farming",
-    "construction_cost": {
-      "planks": 2
-    },
-    "recipes": [ "insects_1star", "salt_2star" ],
     "specialization_bonus": [ "farming" ],
     "rain_engine": "",
     "exclusivity": "",
