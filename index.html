@@ -1530,7 +1530,7 @@
                 const stars = parseInt(match[2], 10);
 
                 // Check if this product is useful in existing buildings' recipes
-                let isUseful = false;
+                let usefulnessCount = 0;
                 currentBuildings.forEach(bKey => {
                     const cb = gameData.buildings[bKey];
                     cb.recipes?.forEach(recipeKey => {
@@ -1540,15 +1540,14 @@
                         // Check all ingredient slots
                         recipe.ingredients.forEach(ingredient => {
                             if (ingredient.options?.includes(product)) {
-                                isUseful = true;
+                                usefulnessCount++;
                             }
                         });
                     });
                 });
 
-                if (isUseful) {
-                    let productScore = 20 * stars;
-                    score += productScore;
+                if (usefulnessCount > 0) {
+                    score += 50 * stars * Math.sqrt(usefulnessCount);
                 }
             });
 
