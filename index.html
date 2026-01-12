@@ -1547,7 +1547,7 @@
                 });
 
                 if (usefulnessCount > 0) {
-                    score += 50 * stars * Math.sqrt(usefulnessCount);
+                    score += Math.ceil(40 * stars * Math.sqrt(usefulnessCount));
                 }
             });
 
