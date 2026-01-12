@@ -666,8 +666,8 @@
     "service_type": [ "" ],
     "workers": 2
   },
-  "tea_house": {
-    "name": "Tea House",
+  "teahouse": {
+    "name": "Teahouse",
     "category": "production",
     "construction_cost": {
       "planks": 5,
