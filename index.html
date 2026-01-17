@@ -1137,7 +1137,9 @@
             }
 
             // 8.5) Frog + Brick synergy
-            const hasFrogs = selectedSpecies.includes("frogs");
+            const hasFrogs = selectedSpecies.some(
+                key => gameData.species[key]?.name === "Frogs"
+            );
             const producesBrick =
                 building.recipes?.some(r => r.outputs?.brick > 0) ||
                 building.outputs?.brick > 0;
