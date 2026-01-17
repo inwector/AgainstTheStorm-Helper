@@ -1136,6 +1136,20 @@
                 analysis.reasoning.push(`<li>+${recipeScore}: Building contributes useful production`);
             }
 
+            // 8.5) Frog + Brick synergy
+            const hasFrogs = selectedSpecies.includes("frogs");
+            const producesBrick =
+                building.recipes?.some(r => r.outputs?.brick > 0) ||
+                building.outputs?.brick > 0;
+            if (hasFrogs && producesBrick) {
+                const frogBrickBonus = 25; // tune freely
+                analysis.score += frogBrickBonus;
+                analysis.details.frogBrickBonus = frogBrickBonus;
+                analysis.reasoning.push(
+                    `<li>+${frogBrickBonus}: Frog houses require bricks</li>`
+                );
+            }
+
             // 9) Rainwater bonus
             const rainwaterScore = analyzeRainwaterMatch(building, availableRainwater);
             analysis.score += rainwaterScore;
